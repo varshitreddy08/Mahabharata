@@ -1,26 +1,176 @@
 @import "tailwindcss";
 
+/* ── Chakra / Hindu temple tokens ────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --stone-black:  #0A0818;   /* Sahasrara void — deep cosmic indigo */
+  --stone-dark:   #100D22;   /* dark violet */
+  --stone-mid:    #1A1538;   /* elevated chakra surface */
+  --stone-raised: #241D4A;   /* hover / active */
+  --gold:         #FFB300;   /* turmeric gold — Manipura */
+  --gold-light:   #FFD54F;   /* bright haldi */
+  --gold-dim:     #A07800;   /* dim gold */
+  --saffron:      #FF6600;   /* sacred Agni / kesariya */
+  --saffron-dark: #CC4400;   /* deep saffron */
+  --crimson:      #B71C1C;   /* temple sindoor red */
+  --lotus:        #E91E8C;   /* lotus pink — Anahata */
+  --ajna:         #5C35C5;   /* Ajna indigo */
+  --parchment:    #FFF8F0;   /* warm sacred white */
+  --parchment-dim:#C8B8A2;   /* muted cream */
+  --font-display: var(--font-cinzel), 'Georgia', serif;
+  --font-body:    var(--font-lora), 'Georgia', serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--stone-black);
+  --color-foreground: var(--parchment);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ── Base ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--stone-black);
+  color: var(--parchment);
+  font-family: var(--font-body);
+  min-height: 100dvh;
+}
+
+/* ── Keyframes ────────────────────────────────────── */
+@keyframes mandala-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes mandala-spin-reverse {
+  from { transform: rotate(360deg); }
+  to   { transform: rotate(0deg); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    text-shadow:
+      0 0 20px #FFB300,
+      0 0 50px #FF660060,
+      0 0 90px #5C35C540;
+  }
+  50% {
+    text-shadow:
+      0 0 35px #FFD54F,
+      0 0 70px #FFB30090,
+      0 0 130px #FF660060,
+      0 0 200px #5C35C530;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* ── Utility classes ──────────────────────────────── */
+.font-display { font-family: var(--font-display); }
+.font-body    { font-family: var(--font-body); }
+
+.animate-mandala      { animation: mandala-spin 90s linear infinite; }
+.animate-mandala-rev  { animation: mandala-spin-reverse 60s linear infinite; }
+.animate-glow         { animation: glow-pulse 3.5s ease-in-out infinite; }
+.animate-fade-up      { animation: fade-in-up 0.55s ease-out forwards; }
+
+/* ── 3-D card ─────────────────────────────────────── */
+.card-3d {
+  transform-style: preserve-3d;
+  transform: perspective(900px) rotateX(0deg) translateY(0) translateZ(0);
+  transition:
+    transform  0.45s cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow:
+    0  2px  6px rgba(0,0,0,0.8),
+    0  1px  0   rgba(255,179,0,0.12) inset,
+    0 -1px  0   rgba(0,0,0,0.6)      inset;
+}
+.card-3d:hover {
+  transform: perspective(900px) rotateX(-7deg) translateY(-10px) translateZ(24px);
+  box-shadow:
+    0 28px 56px rgba(0,0,0,0.75),
+    0  8px 20px rgba(255,102,0,0.2),
+    0  4px 14px rgba(92,53,197,0.2),
+    0  1px  0   rgba(255,179,0,0.35) inset;
+}
+
+/* ── Temple input ─────────────────────────────────── */
+.temple-input {
+  background: radial-gradient(ellipse at 50% 30%, #170F30 0%, #0C0820 100%);
+  box-shadow:
+    inset 0 3px 10px rgba(0,0,0,0.9),
+    inset 0  1px  2px rgba(0,0,0,0.95),
+    0 1px 0 rgba(255,179,0,0.2);
+  caret-color: var(--gold);
+  outline: none;
+  transition: box-shadow 0.25s;
+}
+.temple-input:focus {
+  box-shadow:
+    inset 0 3px 10px rgba(0,0,0,0.9),
+    0 0 0 1.5px var(--saffron),
+    0 0 28px rgba(255,102,0,0.2),
+    0 0 50px rgba(92,53,197,0.1);
+}
+.temple-input::placeholder { color: var(--gold-dim); opacity: 0.65; }
+
+/* ── Sacred fire button ───────────────────────────── */
+.btn-saffron {
+  background: linear-gradient(135deg, #CC3300 0%, #FF6600 40%, #FFB300 100%);
+  background-size: 200% auto;
+  transition: background-position 0.5s, box-shadow 0.3s, transform 0.2s;
+  box-shadow:
+    0 2px 14px rgba(255,102,0,0.5),
+    0 0  28px rgba(255,179,0,0.2),
+    0 1px 0 rgba(255,255,255,0.12) inset;
+}
+.btn-saffron:hover:not(:disabled) {
+  background-position: right center;
+  box-shadow:
+    0 4px 24px rgba(255,102,0,0.7),
+    0 0  40px rgba(255,179,0,0.3),
+    0 1px 0 rgba(255,255,255,0.18) inset;
+  transform: translateY(-1px);
+}
+.btn-saffron:active:not(:disabled) { transform: translateY(0); }
+.btn-saffron:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Ornament divider ─────────────────────────────── */
+.ornament-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--gold-dim);
+}
+.ornament-line::before,
+.ornament-line::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+
+/* ── Answer prose ─────────────────────────────────── */
+.answer-prose {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--parchment);
+}
+.answer-prose strong, .answer-prose b { color: var(--gold-light); font-weight: 600; }
+
+/* ── Scrollbar ────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--stone-black); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }

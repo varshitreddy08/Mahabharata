@@ -6,12 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "embed": "npx tsx scripts/precompute-embeddings.ts"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^3.0.105",
+    "@ai-sdk/react": "^3.0.275",
+    "ai": "^6.0.272",
     "next": "16.3.3",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "zod": "^4.5.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
