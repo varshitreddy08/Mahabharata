@@ -549,7 +549,9 @@ export default function DebatePage() {
       <footer className="text-center py-6 text-xs font-display"
         style={{ color: 'var(--gold-dim)', letterSpacing: '0.1em', borderTop: '1px solid #1E1640' }}>
         <LotusDivider />
-        <p className="mt-3">VARSHITREDDY · 2026</p>
+        <p className="mt-3 text-[10px]" style={{ color: 'var(--parchment-dim)', letterSpacing: '0.08em' }}>
+          Made with <span style={{ color: 'var(--lotus)' }}>♥</span> by Shakti Mahotsav Tech Team
+        </p>
       </footer>
     </div>
   );
