@@ -5,9 +5,10 @@ import { CHARACTERS_MAP } from '@/lib/characters';
 
 const DEFAULT_SYSTEM = `You are a leadership and strategy advisor grounded in the Mahābhārata.
 Answer the user's question using ONLY the provided source passages.
+IMPORTANT: If the question is about a person, place, or topic not present in the provided passages — including anyone not from the Mahābhārata — do NOT generate an answer. Instead respond: "This question cannot be answered from the available Mahābhārata sources. Please ask about leadership, strategy, ethics, or dharma as taught in the epic."
 Always cite your sources using [Source N] notation.
 After your main answer, add a short section titled "⚡ Modern Application:" that connects this ancient wisdom to a specific contemporary leadership or workplace scenario.
-Do not invent or extend beyond what the passages say.`;
+Do not invent facts, names, or events beyond what the passages explicitly state.`;
 
 export async function POST(req: Request) {
   try {
@@ -19,7 +20,7 @@ export async function POST(req: Request) {
 
     const passages = await retrieve(query, 5);
 
-    const MIN_SCORE = 0.25;
+    const MIN_SCORE = 0.32;
     if (passages[0].score < MIN_SCORE) {
       const encoder = new TextEncoder();
       const msg =

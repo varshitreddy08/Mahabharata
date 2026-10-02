@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { SourceCard } from '@/components/SourceCard';
-import { CHARACTERS } from '@/lib/characters';
+import { SourceCard, getParvaWikiLink } from '@/components/SourceCard';
+import { CHARACTERS, ALL_CHARACTERS } from '@/lib/characters';
 
 interface Source {
   id: string; parva: string; adhyaya: string; episode: string;
@@ -30,6 +30,63 @@ const EXAMPLE_QUERIES = [
   'What are the four instruments of statecraft?',
   'How to balance loyalty and ethics?',
 ];
+
+/* ── Parva → Wikipedia link ───────────────────────── */
+// re-exported from SourceCard; imported here for inline citations
+
+/* ── Inline citation parser ──────────────────────── */
+function ParsedAnswer({
+  text,
+  sources,
+  accent,
+  loading,
+}: {
+  text: string;
+  sources: Source[];
+  accent?: string;
+  loading?: boolean;
+}) {
+  const parts = text.split(/(\[Source \d+\])/g);
+  return (
+    <>
+      {parts.map((part, i) => {
+        const m = part.match(/\[Source (\d+)\]/);
+        if (m) {
+          const idx = parseInt(m[1]) - 1;
+          const src = sources[idx];
+          const url = src ? getParvaWikiLink(src.parva) : null;
+          return url ? (
+            <a
+              key={i}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-display text-[11px] px-1 py-0.5 rounded"
+              style={{
+                color: accent || 'var(--gold)',
+                background: 'rgba(197,156,57,0.1)',
+                border: `1px solid ${accent || 'var(--gold)'}50`,
+                textDecoration: 'none',
+                whiteSpace: 'nowrap',
+              }}
+              title={src ? `${src.parva} — ${src.adhyaya}` : undefined}>
+              {part} ↗
+            </a>
+          ) : (
+            <span key={i} style={{ color: accent || 'var(--gold)' }}>{part}</span>
+          );
+        }
+        return <span key={i}>{part}</span>;
+      })}
+      {loading && (
+        <span
+          className="inline-block w-0.5 h-4 ml-0.5 animate-pulse"
+          style={{ background: accent || 'var(--gold)', verticalAlign: 'middle' }}
+        />
+      )}
+    </>
+  );
+}
 
 /* ── Mandala SVG ──────────────────────────────────── */
 function Mandala({ className }: { className?: string }) {
@@ -115,6 +172,8 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [error, setError]     = useState('');
   const [character, setCharacter] = useState('');
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Council of Five
   const [councilMode, setCouncilMode] = useState(false);
@@ -129,10 +188,21 @@ export default function Home() {
   // Shloka of the Day
   const [dailyWisdom, setDailyWisdom] = useState<DailyChunk | null>(null);
 
-  const activeChar = CHARACTERS.find(c => c.id === character) ?? null;
+  const activeChar = ALL_CHARACTERS.find(c => c.id === character) ?? null;
 
   useEffect(() => {
     fetch('/api/daily').then(r => r.json()).then(setDailyWisdom).catch(() => {});
+  }, []);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   async function streamCharacter(charId: string, q: string) {
@@ -367,59 +437,114 @@ export default function Home() {
               </button>
             </div>
 
-            {/* ── Character Voice Selector (single mode only) ── */}
+            {/* ── Character Voice Selector (dropdown, single mode only) ── */}
             {!councilMode && (
-              <div>
+              <div ref={dropdownRef} className="relative">
                 <p className="font-display text-[10px] tracking-[0.25em] uppercase mb-2"
                   style={{ color: 'var(--gold-dim)' }}>
                   Voice of Wisdom
                 </p>
-                <div className="flex flex-wrap gap-1.5">
 
-                  {/* "Any Voice" default */}
-                  <button
-                    onClick={() => setCharacter('')}
-                    disabled={loading}
-                    suppressHydrationWarning
-                    className="flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all duration-250 text-xs font-display"
-                    style={{
-                      background: character === '' ? 'rgba(92,53,197,0.25)' : 'var(--stone-mid)',
-                      border: `1px solid ${character === '' ? 'var(--ajna)' : '#2A1F55'}`,
-                      color: character === '' ? 'var(--gold-light)' : 'var(--parchment-dim)',
-                      letterSpacing: '0.06em',
-                      boxShadow: character === '' ? '0 0 14px rgba(92,53,197,0.3)' : 'none',
-                    }}>
-                    <span>✦</span>
-                    <span>Oracle</span>
-                  </button>
+                {/* Dropdown trigger */}
+                <button
+                  onClick={() => setDropdownOpen(p => !p)}
+                  disabled={loading}
+                  suppressHydrationWarning
+                  className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-xs font-display transition-all duration-200"
+                  style={{
+                    background: activeChar ? activeChar.bg : 'rgba(92,53,197,0.15)',
+                    border: `1px solid ${activeChar ? activeChar.accent + '80' : 'var(--ajna)'}`,
+                    color: activeChar ? activeChar.accent : 'var(--gold-light)',
+                    letterSpacing: '0.06em',
+                    minWidth: '220px',
+                    boxShadow: activeChar
+                      ? `0 0 12px ${activeChar.accent}30`
+                      : '0 0 12px rgba(92,53,197,0.2)',
+                  }}>
+                  <span className="text-base leading-none">{activeChar ? activeChar.symbol : '✦'}</span>
+                  <span className="flex-1 text-left">
+                    {activeChar ? `${activeChar.name} · ${activeChar.title}` : 'Oracle — General Wisdom'}
+                  </span>
+                  <span style={{
+                    display: 'inline-block',
+                    transform: dropdownOpen ? 'rotate(180deg)' : 'none',
+                    transition: 'transform 0.2s',
+                    fontSize: '10px',
+                    opacity: 0.7,
+                  }}>▾</span>
+                </button>
 
-                  {CHARACTERS.map(c => (
-                    <button
-                      key={c.id}
-                      onClick={() => setCharacter(c.id)}
-                      disabled={loading}
-                      suppressHydrationWarning
-                      className="flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all duration-250 text-xs font-display"
-                      style={{
-                        background: character === c.id ? c.bg : 'var(--stone-mid)',
-                        border: `1px solid ${character === c.id ? c.accent : '#2A1F55'}`,
-                        color: character === c.id ? c.accent : 'var(--parchment-dim)',
-                        letterSpacing: '0.06em',
-                        boxShadow: character === c.id ? `0 0 14px ${c.accent}40` : 'none',
-                        transform: character === c.id ? 'translateY(-1px)' : 'none',
-                      }}>
-                      <span className="text-sm leading-none">{c.symbol}</span>
-                      <span>{c.name}</span>
-                    </button>
-                  ))}
-                </div>
-
-                {/* Active character philosophy */}
+                {/* Philosophy line */}
                 {activeChar && (
                   <p className="text-[10px] font-body italic mt-1.5"
                     style={{ color: activeChar.accent, opacity: 0.8 }}>
-                    {activeChar.title} · &ldquo;{activeChar.philosophy}&rdquo;
+                    &ldquo;{activeChar.philosophy}&rdquo;
                   </p>
+                )}
+
+                {/* Dropdown panel */}
+                {dropdownOpen && (
+                  <div
+                    className="absolute z-50 top-full mt-1 rounded-lg overflow-hidden overflow-y-auto"
+                    style={{
+                      background: 'linear-gradient(160deg, #1A1438 0%, #100C24 100%)',
+                      border: '1px solid #32226A',
+                      boxShadow: '0 12px 40px rgba(0,0,0,0.9)',
+                      minWidth: '260px',
+                      maxHeight: '380px',
+                    }}>
+
+                    {/* Oracle option */}
+                    <button
+                      onClick={() => { setCharacter(''); setDropdownOpen(false); }}
+                      suppressHydrationWarning
+                      className="w-full flex items-center gap-3 px-4 py-3 text-left"
+                      style={{
+                        background: character === '' ? 'rgba(92,53,197,0.2)' : 'transparent',
+                        borderBottom: '1px solid #1E1640',
+                        transition: 'background 0.15s',
+                      }}
+                      onMouseEnter={e => {
+                        if (character !== '') (e.currentTarget as HTMLButtonElement).style.background = 'rgba(255,255,255,0.04)';
+                      }}
+                      onMouseLeave={e => {
+                        if (character !== '') (e.currentTarget as HTMLButtonElement).style.background = 'transparent';
+                      }}>
+                      <span className="text-base w-5 text-center leading-none" style={{ color: 'var(--gold)' }}>✦</span>
+                      <div className="flex-1">
+                        <p className="text-xs font-display" style={{ color: 'var(--gold-light)', letterSpacing: '0.06em' }}>Oracle</p>
+                        <p className="text-[10px] font-body" style={{ color: 'var(--parchment-dim)' }}>General Mahābhārata wisdom</p>
+                      </div>
+                      {character === '' && <span style={{ color: 'var(--gold)', fontSize: '11px' }}>✓</span>}
+                    </button>
+
+                    {/* All characters */}
+                    {ALL_CHARACTERS.map((c, i) => (
+                      <button
+                        key={c.id}
+                        onClick={() => { setCharacter(c.id); setDropdownOpen(false); }}
+                        suppressHydrationWarning
+                        className="w-full flex items-center gap-3 px-4 py-3 text-left"
+                        style={{
+                          background: character === c.id ? c.bg : 'transparent',
+                          borderBottom: i < ALL_CHARACTERS.length - 1 ? '1px solid #1E1640' : 'none',
+                          transition: 'background 0.15s',
+                        }}
+                        onMouseEnter={e => {
+                          if (character !== c.id) (e.currentTarget as HTMLButtonElement).style.background = 'rgba(255,255,255,0.04)';
+                        }}
+                        onMouseLeave={e => {
+                          if (character !== c.id) (e.currentTarget as HTMLButtonElement).style.background = 'transparent';
+                        }}>
+                        <span className="text-base w-5 text-center leading-none">{c.symbol}</span>
+                        <div className="flex-1">
+                          <p className="text-xs font-display" style={{ color: c.accent, letterSpacing: '0.06em' }}>{c.name}</p>
+                          <p className="text-[10px] font-body" style={{ color: 'var(--parchment-dim)' }}>{c.title}</p>
+                        </div>
+                        {character === c.id && <span style={{ color: c.accent, fontSize: '11px' }}>✓</span>}
+                      </button>
+                    ))}
+                  </div>
                 )}
               </div>
             )}
@@ -507,7 +632,6 @@ export default function Home() {
                       border: `1px solid ${c.accent}50`,
                       boxShadow: charAnswer ? `0 0 20px ${c.accent}15` : 'none',
                     }}>
-                    {/* Card header */}
                     <div className="flex items-center gap-2 mb-2 pb-2"
                       style={{ borderBottom: `1px solid ${c.accent}25` }}>
                       <span className="text-xl transition-all duration-500"
@@ -528,7 +652,6 @@ export default function Home() {
                         </span>
                       )}
                     </div>
-                    {/* Card body */}
                     {charAnswer ? (
                       <p className="text-[11px] sm:text-xs font-body leading-relaxed whitespace-pre-wrap"
                         style={{ color: 'var(--parchment)', maxHeight: '18rem', overflowY: 'auto' }}>
@@ -582,11 +705,12 @@ export default function Home() {
 
               {answer ? (
                 <p className="answer-prose whitespace-pre-wrap">
-                  {answer}
-                  {loading && (
-                    <span className="inline-block w-0.5 h-4 ml-0.5 animate-pulse"
-                      style={{ background: activeChar ? activeChar.accent : 'var(--gold)', verticalAlign: 'middle' }} />
-                  )}
+                  <ParsedAnswer
+                    text={answer}
+                    sources={sources}
+                    accent={activeChar?.accent}
+                    loading={loading}
+                  />
                 </p>
               ) : (
                 <div className="flex items-center gap-3" style={{ color: activeChar ? activeChar.accent : 'var(--gold-dim)' }}>
@@ -637,15 +761,19 @@ export default function Home() {
                   &ldquo;{dailyWisdom.text}&rdquo;
                 </p>
                 <div className="flex items-center gap-2 flex-wrap">
-                  <span className="text-[10px] font-display px-2 py-0.5 rounded"
+                  <a
+                    href={getParvaWikiLink(dailyWisdom.parva)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[10px] font-display px-2 py-0.5 rounded hover:underline"
                     style={{
                       background: 'rgba(197,156,57,0.1)',
                       border: '1px solid rgba(197,156,57,0.25)',
                       color: 'var(--gold-dim)',
                       letterSpacing: '0.05em',
                     }}>
-                    {dailyWisdom.parva}
-                  </span>
+                    {dailyWisdom.parva} ↗
+                  </a>
                   <span className="text-[10px]" style={{ color: 'var(--parchment-dim)' }}>·</span>
                   <span className="text-[10px] font-body italic" style={{ color: 'var(--parchment-dim)' }}>
                     {dailyWisdom.adhyaya} · {dailyWisdom.episode}
@@ -671,19 +799,30 @@ export default function Home() {
                 Parva · Adhyāya citations and modern applications on every answer.
               </p>
 
-              {/* Character showcase */}
+              {/* Character showcase — all voices */}
               <div className="mb-5">
                 <p className="font-display text-[10px] tracking-[0.2em] uppercase mb-3 text-center"
-                  style={{ color: 'var(--gold-dim)' }}>Five Voices · Five Philosophies</p>
-                <div className="grid grid-cols-5 gap-2">
-                  {CHARACTERS.map(c => (
-                    <div key={c.id} className="flex flex-col items-center gap-1 p-2 rounded"
-                      style={{ background: c.bg, border: `1px solid ${c.accent}40` }}>
+                  style={{ color: 'var(--gold-dim)' }}>
+                  {ALL_CHARACTERS.length + 1} Voices · Oracle + {ALL_CHARACTERS.length} Sages
+                </p>
+                <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
+                  {ALL_CHARACTERS.map(c => (
+                    <button
+                      key={c.id}
+                      onClick={() => { setCharacter(c.id); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                      className="flex flex-col items-center gap-1 p-2 rounded transition-all"
+                      style={{
+                        background: c.bg,
+                        border: `1px solid ${c.accent}40`,
+                        cursor: 'pointer',
+                      }}
+                      onMouseEnter={e => (e.currentTarget as HTMLButtonElement).style.border = `1px solid ${c.accent}90`}
+                      onMouseLeave={e => (e.currentTarget as HTMLButtonElement).style.border = `1px solid ${c.accent}40`}>
                       <span className="text-xl">{c.symbol}</span>
                       <span className="font-display text-[9px] text-center" style={{ color: c.accent, letterSpacing: '0.04em' }}>
                         {c.name}
                       </span>
-                    </div>
+                    </button>
                   ))}
                 </div>
               </div>
@@ -693,10 +832,15 @@ export default function Home() {
               <div className="flex flex-wrap justify-center gap-3 mt-4 text-xs"
                 style={{ color: 'var(--gold-dim)', fontFamily: 'var(--font-display)' }}>
                 {['Udyoga Parva', 'Vana Parva', 'Śānti Parva', 'Bhīṣma Parva', 'Droṇa Parva'].map(p => (
-                  <span key={p} className="px-2 py-1 rounded"
+                  <a
+                    key={p}
+                    href={getParvaWikiLink(p)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-2 py-1 rounded hover:underline"
                     style={{ border: '1px solid var(--gold-dim)', letterSpacing: '0.05em' }}>
-                    {p}
-                  </span>
+                    {p} ↗
+                  </a>
                 ))}
               </div>
             </div>
@@ -726,7 +870,7 @@ export default function Home() {
             {historyOpen && (
               <div className="mt-2 space-y-2">
                 {history.map(entry => {
-                  const char = CHARACTERS.find(c => c.id === entry.character);
+                  const char = ALL_CHARACTERS.find(c => c.id === entry.character);
                   const isExpanded = expandedHistory === entry.id;
                   return (
                     <div key={entry.id} className="rounded-lg overflow-hidden"
@@ -763,19 +907,28 @@ export default function Home() {
                           }}>
                           <p className="text-xs font-body leading-relaxed whitespace-pre-wrap mb-3"
                             style={{ color: 'var(--parchment)' }}>
-                            {entry.answer}
+                            <ParsedAnswer
+                              text={entry.answer}
+                              sources={entry.sources}
+                              accent={char?.accent}
+                            />
                           </p>
                           {entry.sources.length > 0 && (
                             <div className="flex flex-wrap gap-1.5">
                               {entry.sources.map(s => (
-                                <span key={s.id} className="text-[9px] font-display px-1.5 py-0.5 rounded"
+                                <a
+                                  key={s.id}
+                                  href={getParvaWikiLink(s.parva)}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-[9px] font-display px-1.5 py-0.5 rounded hover:underline"
                                   style={{
                                     background: 'rgba(197,156,57,0.1)',
                                     border: '1px solid rgba(197,156,57,0.2)',
                                     color: 'var(--gold-dim)',
                                   }}>
-                                  {s.parva}
-                                </span>
+                                  {s.parva} ↗
+                                </a>
                               ))}
                             </div>
                           )}

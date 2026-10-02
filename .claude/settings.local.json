@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc *)",
+      "Bash(npx next *)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Varshit's Workspace\\\\mahabharata-rag-app\" -Recurse -Filter \"*.tsx\" -o File)",
+      "Bash(Select-Object FullName)",
+      "Bash(Get-ChildItem -Recurse -Depth 2)"
+    ]
+  }
+}
