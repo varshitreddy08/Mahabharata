@@ -9,9 +9,9 @@ import { join } from 'path';
 import { createOpenAI } from '@ai-sdk/openai';
 import chunks from '../data/mahabharata_chunks.json';
 
-// Load .env.local manually (tsx doesn't auto-load it)
+// Load .env manually (tsx doesn't auto-load it)
 try {
-  const envFile = readFileSync(join(process.cwd(), '.env.local'), 'utf-8');
+  const envFile = readFileSync(join(process.cwd(), '.env'), 'utf-8');
   for (const line of envFile.split('\n')) {
     const [key, ...rest] = line.split('=');
     if (key?.trim() && !key.startsWith('#')) {
