@@ -8,6 +8,7 @@ export interface Chunk {
   topic: string;
   text: string;
   themes: string[];
+  url: string;
 }
 
 export const chunks: Chunk[] = chunksRaw as Chunk[];

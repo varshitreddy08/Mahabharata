@@ -4,342 +4,300 @@
     "parva": "Udyoga Parva",
     "adhyaya": "Adhyāya 33",
     "episode": "Viduranīti",
-    "topic": "Qualities of a wise leader",
-    "text": "Vidura said: O king, he who does not grieve for what is past, who does not fear the future, and who acts with clear resolve in the present — such a one is said to be wise. The mark of wisdom is acting without haste, without negligence, and without being led astray by passion.",
-    "themes": ["wisdom", "leadership", "decision-making", "composure"]
+    "topic": "Marks of a wise mind amid calamity",
+    "text": "They that do not strive for objects that are unattainable, that do not grieve for what is lost and gone, that do not suffer their minds to be clouded amid calamities, are regarded to possess intellects endued with wisdom.",
+    "themes": ["wisdom", "composure", "leadership", "decision-making"],
+    "url": "https://sacred-texts.com/hin/m05/m05033.htm"
   },
   {
     "id": "udyoga-33-02",
     "parva": "Udyoga Parva",
     "adhyaya": "Adhyāya 33",
     "episode": "Viduranīti",
-    "topic": "Counsel on avoiding conflict",
-    "text": "Vidura said: A king who seeks to avoid war must first exhaust every means of peace — conciliation, gift, and negotiation. War is the final resort of one who has no other choice. He who rushes to battle without first trying diplomacy invites the destruction of his own people.",
-    "themes": ["diplomacy", "conflict resolution", "strategy", "governance"]
-  },
-  {
-    "id": "udyoga-34-01",
-    "parva": "Udyoga Parva",
-    "adhyaya": "Adhyāya 34",
-    "episode": "Viduranīti",
-    "topic": "The fourteen vices of a king",
-    "text": "Vidura said: There are fourteen vices that destroy a ruler: atheism, untruthfulness, passion, anger, negligence of duty, idleness, procrastination of good works, taking counsel with only one advisor, seeking advice from those of little wisdom, not executing resolved plans, revealing secret counsels, and failing to do good in season. A king afflicted with these cannot long sustain his kingdom.",
-    "themes": ["leadership flaws", "governance", "vices", "self-discipline"]
+    "topic": "Prudence toward friend and foe",
+    "text": "He is a wise person who doth not disregard even a weak foe; who proceeds with intelligence in respect of a foe, anxiously watching for an opportunity; who doth not desire hostilities with persons stronger than himself; and who displayeth his prowess in season.",
+    "themes": ["diplomacy", "caution", "strategy", "governance"],
+    "url": "https://sacred-texts.com/hin/m05/m05033.htm"
   },
   {
     "id": "udyoga-34-02",
     "parva": "Udyoga Parva",
-    "adhyaya": "Adhyāya 34",
+    "adhyaya": "Adhyāya 33",
     "episode": "Viduranīti",
-    "topic": "Counsel on secret plans",
-    "text": "Vidura said: The leader who discloses his plans before they are ripe for action will never succeed. A strategy revealed is a strategy defeated. Counsel must be protected as one protects a seed beneath the soil — only when the time is right should the plan emerge into action.",
-    "themes": ["strategic secrecy", "planning", "timing", "leadership"]
-  },
-  {
-    "id": "udyoga-35-01",
-    "parva": "Udyoga Parva",
-    "adhyaya": "Adhyāya 35",
-    "episode": "Viduranīti",
-    "topic": "Choosing advisors wisely",
-    "text": "Vidura said: A king should take counsel with advisors who are learned, disinterested, experienced, and of good character. He who listens to flatterers or those who speak only to please will be led into ruin. The wise king does not want to hear what is pleasant — he needs to hear what is true.",
-    "themes": ["advisory", "governance", "truth", "selection of counsel"]
+    "topic": "Keeping counsel concealed until acted upon",
+    "text": "He whose intended acts, and proposed counsels remain concealed from foes, and whose acts become known only after they have been done, is considered wise.",
+    "themes": ["strategic secrecy", "planning", "timing", "leadership"],
+    "url": "https://sacred-texts.com/hin/m05/m05033.htm"
   },
   {
     "id": "udyoga-35-02",
     "parva": "Udyoga Parva",
     "adhyaya": "Adhyāya 35",
     "episode": "Viduranīti",
-    "topic": "The test of a friend",
-    "text": "Vidura said: He is truly a friend who speaks the truth even when it is unwelcome, who stands by you in adversity, who does not abandon you when you are in difficulty, and who does not seek to benefit from your misfortune. Such a friend is rarer than gold and more valuable than an army.",
-    "themes": ["friendship", "loyalty", "trust", "adversity"]
-  },
-  {
-    "id": "udyoga-36-01",
-    "parva": "Udyoga Parva",
-    "adhyaya": "Adhyāya 36",
-    "episode": "Viduranīti",
-    "topic": "Qualities of a capable person",
-    "text": "Vidura said: There are six qualities by which a capable person is known: he begins tasks without delay, he does not abandon what he has begun, he keeps his counsel private, he does not waste time in idle talk, he does not lose composure in failure, and he does not become arrogant in success.",
-    "themes": ["capability", "execution", "discipline", "success"]
-  },
-  {
-    "id": "udyoga-36-02",
-    "parva": "Udyoga Parva",
-    "adhyaya": "Adhyāya 36",
-    "episode": "Viduranīti",
-    "topic": "Recognising and rewarding merit",
-    "text": "Vidura said: A king who does not recognise and honour the meritorious among his servants will soon find himself without capable hands. Merit ignored does not remain — it migrates to where it is appreciated. The wise ruler creates conditions in which ability thrives.",
-    "themes": ["recognition", "talent management", "motivation", "governance"]
+    "topic": "How calamity reveals true friends",
+    "text": "A brave man is tested during a season of panic; he that is self-controlled, in times of poverty; and friends and foes, in times of calamity and danger.",
+    "themes": ["friendship", "loyalty", "trust", "adversity"],
+    "url": "https://sacred-texts.com/hin/m05/m05035.htm"
   },
   {
     "id": "udyoga-37-01",
     "parva": "Udyoga Parva",
     "adhyaya": "Adhyāya 37",
     "episode": "Viduranīti",
-    "topic": "Anger as an enemy of leadership",
-    "text": "Vidura said: Anger is the most dangerous enemy of a ruler. One who has mastered the use of weapons but cannot master his own anger will be destroyed. In the moment of anger, the wisest person becomes a fool — decisions made in rage are almost always regretted.",
-    "themes": ["anger management", "self-control", "leadership", "emotional intelligence"]
+    "topic": "Mastering anger and joy to win prosperity",
+    "text": "He that restraineth the force of both anger and joy, and never, O king, loseth his senses under calamities, winneth prosperity.",
+    "themes": ["anger management", "self-control", "composure", "leadership"],
+    "url": "https://sacred-texts.com/hin/m05/m05037.htm"
   },
   {
     "id": "udyoga-37-02",
     "parva": "Udyoga Parva",
     "adhyaya": "Adhyāya 37",
     "episode": "Viduranīti",
-    "topic": "On forgiveness and strength",
-    "text": "Vidura said: Forgiveness is the strength of the strong and the weakness of the weak. The strong person forgives because he can; the weak person pretends to forgive because he must. True forgiveness is not the absence of power but the choice not to exercise it.",
-    "themes": ["forgiveness", "strength", "power", "character"]
+    "topic": "Forgiveness as the quiet strength of the strong",
+    "text": "Endued with forgiveness, they betray no outward symptoms of wrath and are quiet like fire in wood.",
+    "themes": ["forgiveness", "strength", "self-restraint", "character"],
+    "url": "https://sacred-texts.com/hin/m05/m05037.htm"
   },
   {
     "id": "udyoga-38-01",
-    "parva": "Udyoga Parva",
-    "adhyaya": "Adhyāya 38",
-    "episode": "Viduranīti",
-    "topic": "The four approaches of policy",
-    "text": "Vidura said: A ruler has four instruments of policy: conciliation (sāma), gifts (dāna), division (bheda), and force (daṇḍa). The wise leader uses them in this order. He tries conciliation first; if that fails, he offers gifts; if that fails, he sows division; and only as a last resort does he apply force.",
-    "themes": ["policy", "strategy", "statecraft", "conflict resolution"]
+    "parva": "Śānti Parva",
+    "adhyaya": "Adhyāya 69",
+    "episode": "Rājadharma — Bhīṣma's counsel",
+    "topic": "The three expedients of policy: conciliation, gift, and disunion",
+    "text": "The acquisition of dominion should be made by the three well-known means (of conciliation, gift, and disunion).",
+    "themes": ["policy", "statecraft", "diplomacy", "conflict-resolution"],
+    "url": "https://sacred-texts.com/hin/m12/m12a068.htm"
   },
   {
     "id": "udyoga-38-02",
     "parva": "Udyoga Parva",
     "adhyaya": "Adhyāya 38",
     "episode": "Viduranīti",
-    "topic": "Timing and opportunity",
-    "text": "Vidura said: Time is the greatest teacher and the most unforgiving judge. The opportunity that is allowed to pass does not return. The wise person acts at the right moment — neither too early when conditions are not ripe, nor too late when the moment has gone.",
-    "themes": ["timing", "opportunity", "decisiveness", "strategy"]
+    "topic": "Acting against a foe only once you command sufficient strength",
+    "text": "If one be weak one should pay court to one's foe that is stronger, even if the latter deserves death; but one should kill that foe as soon as one commandeth sufficient strength, for, if not killed, dangers soon arise from him.",
+    "themes": ["timing", "strategy", "patience", "strength"],
+    "url": "https://sacred-texts.com/hin/m05/m05038.htm"
   },
   {
     "id": "udyoga-39-01",
     "parva": "Udyoga Parva",
     "adhyaya": "Adhyāya 39",
     "episode": "Viduranīti",
-    "topic": "Protecting those who depend on you",
-    "text": "Vidura said: A king who cannot protect those who have sought shelter under him has failed in his most fundamental duty. A leader's strength is measured not by what he takes but by what he shields. The people who depend on a ruler must be able to sleep in safety.",
-    "themes": ["protection", "duty", "responsibility", "governance"]
+    "topic": "Helping helpless relatives brings enduring prosperity",
+    "text": "He that helpeth his poor and wretched and helpless relatives, obtain children and animals and enjoyeth prosperity that knoweth no end.",
+    "themes": ["protection", "duty", "family", "generosity"],
+    "url": "https://sacred-texts.com/hin/m05/m05039.htm"
   },
   {
     "id": "udyoga-39-02",
     "parva": "Udyoga Parva",
     "adhyaya": "Adhyāya 39",
     "episode": "Viduranīti",
-    "topic": "The danger of greed",
-    "text": "Vidura said: Greed destroys everything it touches — the greedy king loses his treasury, his allies, and finally his throne. No kingdom was ever made great by a ruler who was insatiable. The wise king knows that contentment is a greater weapon than conquest.",
-    "themes": ["greed", "contentment", "governance", "leadership failure"]
+    "topic": "No amount of earthly wealth can satiate one person's greed",
+    "text": "Thy paddy, wheat, gold, animals, and women that are on earth all cannot satiate even one person.",
+    "themes": ["greed", "contentment", "insatiability", "governance"],
+    "url": "https://sacred-texts.com/hin/m05/m05039.htm"
   },
   {
     "id": "udyoga-40-01",
     "parva": "Udyoga Parva",
-    "adhyaya": "Adhyāya 40",
-    "episode": "Viduranīti",
-    "topic": "Knowledge as the highest treasure",
-    "text": "Vidura said: Among all treasures, knowledge is the highest. Wealth may be stolen, but knowledge cannot be taken. A person deprived of everything else but possessing knowledge will rise again. The learned person carries his wealth wherever he goes.",
-    "themes": ["knowledge", "learning", "resilience", "wisdom"]
+    "adhyaya": "Adhyāya 42",
+    "episode": "Sanatsujātīya — Sanatsujāta's counsel to Dhṛtarāṣṭra",
+    "topic": "Heavenly wealth over earthly wealth makes one unconquerable",
+    "text": "They that are poor in earthly but rich in heavenly wealth and sacrifices, become unconquerable and fearless, and they should be regarded as embodiments of Brahman.",
+    "themes": ["wealth", "spiritual treasure", "fearlessness", "asceticism"],
+    "url": "https://sacred-texts.com/hin/m05/m05042.htm"
   },
   {
     "id": "udyoga-40-02",
     "parva": "Udyoga Parva",
-    "adhyaya": "Adhyāya 40",
+    "adhyaya": "Adhyāya 36",
     "episode": "Viduranīti",
-    "topic": "Humility in leadership",
-    "text": "Vidura said: The tree that grows tallest bows most in the wind. The wise person, however great their learning or power, remains humble — for arrogance closes the mind to new understanding. The arrogant leader has stopped learning and is already in decline.",
-    "themes": ["humility", "arrogance", "learning", "leadership character"]
+    "topic": "Standing alone invites destruction, even for the mighty",
+    "text": "The tree that stands singly, though gigantic and strong and deep-rooted, hath its trunk soon smashed and twisted by a mighty wind.",
+    "themes": ["unity", "isolation", "vulnerability", "collective-strength"],
+    "url": "https://sacred-texts.com/hin/m05/m05036.htm"
   },
   {
     "id": "vana-297-01",
     "parva": "Vana Parva",
-    "adhyaya": "Adhyāya 297",
+    "adhyaya": "Adhyāya 311",
     "episode": "Yakṣa Praśna",
     "topic": "What is the greatest wonder?",
-    "text": "The Yakṣa asked: What is the greatest wonder in the world? Yudhiṣṭhira replied: Every day creatures die, yet those who remain act as though they will live forever. This is the greatest wonder.",
-    "themes": ["mortality", "awareness", "wisdom", "existential"]
+    "text": "Yaksha: What is most wonderful? Yudhishthira: Day after day countless creatures are going to the abode of Yama, yet those that remain behind believe themselves to be immortal. What can be more wonderful than this?",
+    "themes": ["mortality", "awareness", "wisdom", "existential"],
+    "url": "https://sacred-texts.com/hin/m03/m03311.htm"
   },
   {
     "id": "vana-297-02",
     "parva": "Vana Parva",
-    "adhyaya": "Adhyāya 297",
+    "adhyaya": "Adhyāya 311",
     "episode": "Yakṣa Praśna",
     "topic": "What is true happiness?",
-    "text": "The Yakṣa asked: What is happiness? Yudhiṣṭhira replied: Happiness is the result of good conduct. It does not come from wealth, or power, or fame, but from living rightly and treating others as you wish to be treated.",
-    "themes": ["happiness", "ethics", "conduct", "wellbeing"]
+    "text": "Yaksha: Who is truly happy? Yudhishthira: a man who cooketh in his own house, on the fifth or the sixth part of the day, with scanty vegetables, but who is not in debt and who stirreth not from home, is truly happy.",
+    "themes": ["happiness", "ethics", "conduct", "wellbeing"],
+    "url": "https://sacred-texts.com/hin/m03/m03311.htm"
   },
   {
     "id": "vana-297-03",
     "parva": "Vana Parva",
-    "adhyaya": "Adhyāya 297",
+    "adhyaya": "Adhyāya 311",
     "episode": "Yakṣa Praśna",
     "topic": "Who is truly learned?",
-    "text": "The Yakṣa asked: Who is truly learned? Yudhiṣṭhira replied: He who knows his duty — not he who has merely read many scriptures. Knowledge that does not guide right action is empty learning.",
-    "themes": ["education", "wisdom", "duty", "applied knowledge"]
+    "text": "Yaksha: What man should be regarded as learned? Yudhishthira: He is to be called learned who knoweth his duties.",
+    "themes": ["education", "wisdom", "duty", "applied knowledge"],
+    "url": "https://sacred-texts.com/hin/m03/m03311.htm"
   },
   {
     "id": "vana-297-04",
     "parva": "Vana Parva",
-    "adhyaya": "Adhyāya 297",
+    "adhyaya": "Adhyāya 311",
     "episode": "Yakṣa Praśna",
-    "topic": "What is the path to heaven?",
-    "text": "The Yakṣa asked: What is the path to the highest good? Yudhiṣṭhira replied: Truth is the highest dharma. Compassion to all creatures. Absence of jealousy. Serenity of mind. And non-injury to all living beings. These are the marks of one who walks the highest path.",
-    "themes": ["dharma", "ethics", "compassion", "non-violence"]
+    "topic": "What is the path?",
+    "text": "Yaksha: What is the path? Yudhishthira: Argument leads to no certain conclusion, the Srutis are different from one another; there is not even one Rishi whose opinion can be accepted by all; the truth about religion and duty is hid in caves: therefore, that alone is the path along which the great have trod.",
+    "themes": ["dharma", "ethics", "tradition", "uncertainty"],
+    "url": "https://sacred-texts.com/hin/m03/m03311.htm"
   },
   {
     "id": "vana-297-05",
     "parva": "Vana Parva",
-    "adhyaya": "Adhyāya 297",
+    "adhyaya": "Adhyāya 311",
     "episode": "Yakṣa Praśna",
     "topic": "Who is the true enemy?",
-    "text": "The Yakṣa asked: Who is the real enemy of a person? Yudhiṣṭhira replied: Anger. He who is enslaved by anger has his greatest enemy within him. No external foe is more destructive than the anger that clouds one's own judgment.",
-    "themes": ["anger", "internal enemies", "self-mastery", "leadership"]
+    "text": "Yaksha: What enemy is invincible? Yudhishthira: Anger is an invincible enemy.",
+    "themes": ["anger", "internal enemies", "self-mastery", "leadership"],
+    "url": "https://sacred-texts.com/hin/m03/m03311.htm"
   },
   {
     "id": "vana-297-06",
     "parva": "Vana Parva",
-    "adhyaya": "Adhyāya 297",
+    "adhyaya": "Adhyāya 311",
     "episode": "Yakṣa Praśna",
     "topic": "What is grief?",
-    "text": "The Yakṣa asked: What is grief? Yudhiṣṭhira replied: Ignorance is grief. He who does not know himself, who does not understand the nature of things, who clings to what is impermanent — that person lives in perpetual grief.",
-    "themes": ["grief", "ignorance", "self-knowledge", "impermanence"]
+    "text": "Yaksha: What, O king, is ignorance? And what is pride? What also is to be understood by idleness? And what hath been spoken of as grief? Yudhishthira: True ignorance consists in not knowing one's duties. Pride is a consciousness of one's being himself an actor or sufferer in life. Idleness consists in not discharging one's duties, and ignorance in grief.",
+    "themes": ["grief", "ignorance", "self-knowledge", "impermanence"],
+    "url": "https://sacred-texts.com/hin/m03/m03311.htm"
   },
   {
     "id": "shanti-56-01",
     "parva": "Śānti Parva",
-    "adhyaya": "Adhyāya 56",
+    "adhyaya": "Adhyāya 58",
     "episode": "Rājadharma — Bhīṣma's counsel",
-    "topic": "The first duty of a king",
-    "text": "Bhīṣma said: The first duty of a king is the protection of his people. All other duties flow from this one. A king who enriches himself while his people suffer has abdicated the very purpose of kingship. The welfare of the many is the measure of a good ruler.",
-    "themes": ["duty", "governance", "public welfare", "leadership responsibility"]
-  },
-  {
-    "id": "shanti-56-02",
-    "parva": "Śānti Parva",
-    "adhyaya": "Adhyāya 56",
-    "episode": "Rājadharma — Bhīṣma's counsel",
-    "topic": "Justice as the foundation of governance",
-    "text": "Bhīṣma said: When a king punishes the guilty and protects the innocent without distinction of rank or wealth, his kingdom flourishes. But a king who shows favour to the powerful and neglects the weak will find that his kingdom rots from within. Justice must be blind to status.",
-    "themes": ["justice", "fairness", "governance", "equality"]
+    "topic": "Protection of subjects is a king's foremost duty",
+    "text": "Protection of the subject, O Yudhishthira, is the very chief of kingly duties. The divine Vrihaspati does not applaud any other duty so much as this one. All of them praise the duty of protection, O foremost of virtuous persons, in respect of kings.",
+    "themes": ["duty", "governance", "public welfare", "leadership responsibility"],
+    "url": "https://sacred-texts.com/hin/m12/m12a057.htm"
   },
   {
     "id": "shanti-57-01",
     "parva": "Śānti Parva",
-    "adhyaya": "Adhyāya 57",
+    "adhyaya": "Adhyāya 80",
     "episode": "Rājadharma — Bhīṣma's counsel",
-    "topic": "The quality of a good minister",
-    "text": "Bhīṣma said: The king should choose ministers who are learned in statecraft, who are loyal, who are free from the vice of greed, who speak the truth even when it is difficult, and who have the courage to advise against a mistaken course of action. A king is only as wise as his council.",
-    "themes": ["ministry", "selection", "governance", "counsel"]
+    "topic": "Qualities to look for when choosing a counsellor",
+    "text": "That person who is possessed of intelligence and memory, who is clever in the transaction of business, who is naturally averse from cruelty, who never indulges in wrath, and who, whether regarded or disregarded is never dissatisfied, be he thy priest or preceptor or honoured friend, should always receive thy worship if he accepts the office of thy counsellor and resides in thy abode.",
+    "themes": ["ministry", "selection", "governance", "counsel"],
+    "url": "https://sacred-texts.com/hin/m12/m12a079.htm"
   },
   {
     "id": "shanti-57-02",
     "parva": "Śānti Parva",
-    "adhyaya": "Adhyāya 57",
+    "adhyaya": "Adhyāya 88",
     "episode": "Rājadharma — Bhīṣma's counsel",
-    "topic": "Treasury and resource management",
-    "text": "Bhīṣma said: A king without a well-maintained treasury cannot sustain an army, cannot reward his servants, and cannot protect his people. Wealth must be gathered justly — by taxation that does not crush the farmer, by trade that is free and fair, and by avoiding needless expenditure on luxury.",
-    "themes": ["resource management", "treasury", "taxation", "governance"]
+    "topic": "Taxation should be gentle, like a bee gathering honey",
+    "text": "A king should milk his kingdom like a bee gathering honey from plants, without injuring the plant from which it is gathered. The king should, in the matter of taxes, act like the leech, which drinks blood mildly, without the knowledge of the person from whom it draws it.",
+    "themes": ["resource management", "treasury", "taxation", "governance"],
+    "url": "https://sacred-texts.com/hin/m12/m12a087.htm"
   },
   {
     "id": "shanti-58-01",
     "parva": "Śānti Parva",
-    "adhyaya": "Adhyāya 58",
+    "adhyaya": "Adhyāya 67",
     "episode": "Rājadharma — Bhīṣma's counsel",
-    "topic": "Punishing excess and rewarding virtue",
-    "text": "Bhīṣma said: The rod of punishment must be wielded with great care. Used rightly, it creates order; used in excess, it creates fear and rebellion. The king who rules purely through fear rules a corpse — the loyalty of the frightened disappears the moment the fear is lifted.",
-    "themes": ["punishment", "authority", "balance", "fear vs. respect"]
+    "topic": "Without the king's rod of punishment, the strong devour the weak",
+    "text": "If there were no king on earth for wielding the rod of chastisement, the strong would then have preyed on the weak after the manner of fishes in the water. It hath been heard by us that men, in days of old, in consequence of anarchy, met with destruction, devouring one another like stronger fishes devouring the weaker ones in the water.",
+    "themes": ["punishment", "authority", "order", "fear vs. respect"],
+    "url": "https://sacred-texts.com/hin/m12/m12a066.htm"
   },
   {
     "id": "shanti-59-01",
     "parva": "Śānti Parva",
-    "adhyaya": "Adhyāya 59",
+    "adhyaya": "Adhyāya 57",
     "episode": "Rājadharma — Bhīṣma's counsel",
-    "topic": "Allies and alliances",
-    "text": "Bhīṣma said: Choose your allies with the same care you choose your food — what seems attractive may prove poisonous. A strong ally who has selfish interests is more dangerous than a weak ally of good faith. Alliances built on shared values outlast those built on shared enemies.",
-    "themes": ["alliances", "diplomacy", "strategy", "trust"]
+    "topic": "Choosing when to make peace and when to wage war with rivals",
+    "text": "Make peace with those foes with whom, according to the ordinance, peace should be made, and wage war with them with whom war should be waged.",
+    "themes": ["alliances", "diplomacy", "strategy", "trust"],
+    "url": "https://sacred-texts.com/hin/m12/m12a056.htm"
   },
   {
     "id": "shanti-60-01",
     "parva": "Śānti Parva",
-    "adhyaya": "Adhyāya 60",
+    "adhyaya": "Adhyāya 88",
     "episode": "Rājadharma — Bhīṣma's counsel",
-    "topic": "Leading by example",
-    "text": "Bhīṣma said: The behaviour of the king is imitated by his people. A king who is dissolute finds that his kingdom becomes dissolute. A king who is just finds that justice becomes the expectation. The leader cannot separate his private conduct from his public influence — they are the same thing.",
-    "themes": ["role modelling", "conduct", "influence", "leadership by example"]
-  },
-  {
-    "id": "shanti-61-01",
-    "parva": "Śānti Parva",
-    "adhyaya": "Adhyāya 61",
-    "episode": "Rājadharma — Bhīṣma's counsel",
-    "topic": "On the nature of power",
-    "text": "Bhīṣma said: Power without virtue is a fire without a vessel — it burns everything including its holder. The ruler who exercises power in the service of dharma becomes stronger with each act. The ruler who exercises power in the service of self-interest weakens himself with each indulgence.",
-    "themes": ["power", "virtue", "dharma", "self-interest"]
+    "topic": "A ruler's own conduct becomes an example others imitate",
+    "text": "A person governed by passion indulges in stimulants and meat, and appropriates the wives and the wealth of other people, and sets a bad example for imitation by others.",
+    "themes": ["role modelling", "conduct", "influence", "leadership by example"],
+    "url": "https://sacred-texts.com/hin/m12/m12a087.htm"
   },
   {
     "id": "shanti-120-01",
     "parva": "Śānti Parva",
     "adhyaya": "Adhyāya 120",
     "episode": "Rājadharma — Bhīṣma's counsel",
-    "topic": "Patience and perseverance",
-    "text": "Bhīṣma said: The greatest kingdom was not built in a day. Patience is the mark of the truly powerful. He who can wait for the right moment, who can endure setback without losing resolve, and who continues working steadily toward the goal — that person ultimately succeeds.",
-    "themes": ["patience", "perseverance", "long-term thinking", "resilience"]
+    "topic": "Patience lets a king achieve his goals even with limited means",
+    "text": "A king possessed of patience and without any fault may, if he likes, obtain the fruition of all his wishes, with the aid of even a small force.",
+    "themes": ["patience", "perseverance", "long-term thinking", "resilience"],
+    "url": "https://sacred-texts.com/hin/m12/m12a119.htm"
   },
   {
-    "id": "udyoga-71-01",
-    "parva": "Udyoga Parva",
-    "adhyaya": "Adhyāya 71",
-    "episode": "Kṛṣṇa's Embassy",
-    "topic": "Negotiation from strength",
-    "text": "Kṛṣṇa said to Duryodhana: I come in peace, but I come representing those who are strong. Peace is not the absence of power — it is the choice of the powerful not to exercise their power. The Pāṇḍavas offer peace not because they cannot fight, but because they prefer justice to blood.",
-    "themes": ["negotiation", "diplomacy", "strength", "peace"]
+    "id": "shanti-140-01",
+    "parva": "Śānti Parva",
+    "adhyaya": "Adhyāya 141",
+    "episode": "Rājadharma — Bhīṣma's counsel",
+    "topic": "In dire circumstances, preserve life first and pursue higher duty afterward",
+    "text": "One should, when one is dying, preserve one's life by any means in one's power without judging of their character. Afterwards, when competent, one should seek the acquisition of merit.",
+    "themes": ["timing", "discernment", "survival", "pragmatism"],
+    "url": "https://sacred-texts.com/hin/m12/m12a140.htm"
   },
   {
-    "id": "udyoga-71-02",
-    "parva": "Udyoga Parva",
-    "adhyaya": "Adhyāya 71",
-    "episode": "Kṛṣṇa's Embassy",
-    "topic": "The limits of stubbornness",
-    "text": "Kṛṣṇa said: A tree that bends in the storm survives; the one that refuses to bend is uprooted. Rigidity dressed as principle is merely ego. The statesman who cannot distinguish between genuine conviction and obstinate pride will destroy himself and those around him.",
-    "themes": ["flexibility", "ego", "diplomacy", "stubbornness"]
-  },
-  {
-    "id": "udyoga-72-01",
-    "parva": "Udyoga Parva",
-    "adhyaya": "Adhyāya 72",
-    "episode": "Kṛṣṇa's Embassy",
-    "topic": "Understanding your adversary",
-    "text": "Kṛṣṇa observed: To succeed in negotiation, you must understand your adversary more completely than he understands himself — his fears, his ambitions, the gap between what he says and what he wants. The negotiator who sees only the surface of a dispute has already lost.",
-    "themes": ["negotiation", "adversary analysis", "empathy", "strategy"]
-  },
-  {
-    "id": "udyoga-73-01",
-    "parva": "Udyoga Parva",
-    "adhyaya": "Adhyāya 73",
-    "episode": "Kṛṣṇa's Embassy",
-    "topic": "The cost of pride",
-    "text": "Kṛṣṇa warned Duryodhana: Pride that cannot admit error is not strength — it is a disease that has mistaken itself for health. Every opportunity for peace that you reject today you will seek with desperation tomorrow, when the cost of war becomes clear.",
-    "themes": ["pride", "humility", "conflict prevention", "foresight"]
+    "id": "shanti-141-01",
+    "parva": "Śānti Parva",
+    "adhyaya": "Adhyāya 141",
+    "episode": "Rājadharma — Bhīṣma's counsel",
+    "topic": "A kingdom's wellbeing directly reflects the king's integrity",
+    "text": "The peace and prosperity of subjects are all dependent on the king. If the king happens to be good, prosperity is seen among the people; if the king becomes oppressive and sinful, prosperity disappears, and every kind of evil sets in.",
+    "themes": ["trust", "integrity", "governance", "accountability"],
+    "url": "https://sacred-texts.com/hin/m12/m12a140.htm"
   },
   {
     "id": "bhishma-25-01",
     "parva": "Bhīṣma Parva",
-    "adhyaya": "Adhyāya 25",
+    "adhyaya": "Adhyāya 26",
     "episode": "Bhagavad Gītā — Kṛṣṇa's counsel to Arjuna",
-    "topic": "On performing one's duty without attachment to outcome",
-    "text": "Kṛṣṇa said: You have a right to perform your duty, but you are not entitled to the fruits of your actions. Let not the fruits of action be your motive, nor let your attachment be to inaction. Perform every action with a disciplined mind, abandoning attachment and regarding success and failure with equanimity.",
-    "themes": ["duty", "detachment", "action", "equanimity", "karma yoga"]
+    "topic": "Duty without attachment to the fruits of action",
+    "text": "Thy concern is with work only, but not with the fruit (of work). Let not the fruit be thy motive for work; nor let thy inclination be for inaction.",
+    "themes": ["duty", "detachment", "action", "equanimity", "karma yoga"],
+    "url": "https://sacred-texts.com/hin/m06/m06026.htm"
   },
   {
     "id": "bhishma-25-02",
     "parva": "Bhīṣma Parva",
-    "adhyaya": "Adhyāya 25",
+    "adhyaya": "Adhyāya 26",
     "episode": "Bhagavad Gītā — Kṛṣṇa's counsel to Arjuna",
-    "topic": "Resolving the paralysis of difficult decisions",
-    "text": "Kṛṣṇa said: Do not yield to unmanliness, O Arjuna. It does not become you. Shake off your faint-heartedness and arise. The situation demands action — not because all consequences are known, but because inaction is itself a choice, and often the worst one.",
-    "themes": ["decisiveness", "paralysis", "difficult decisions", "courage"]
+    "topic": "Rejecting despondency and rising to act",
+    "text": "Whence, O Arjuna, hath come upon thee, at such a crisis, this despondency that is unbecoming a person of noble birth? Let no effeminacy be thine, O son of Kunti. This suits thee not. Shaking off this vile weakness of heart, arise, O chastiser of foes.",
+    "themes": ["decisiveness", "paralysis", "difficult decisions", "courage"],
+    "url": "https://sacred-texts.com/hin/m06/m06026.htm"
   },
   {
     "id": "bhishma-26-01",
     "parva": "Bhīṣma Parva",
-    "adhyaya": "Adhyāya 26",
+    "adhyaya": "Adhyāya 30",
     "episode": "Bhagavad Gītā — Kṛṣṇa's counsel to Arjuna",
-    "topic": "On self-mastery",
-    "text": "Kṛṣṇa said: For him who has conquered the mind, the mind is the best of friends; but for one who has failed to do so, his very mind will be his greatest enemy. The battle that matters most is not fought on a battlefield — it is fought within the self.",
-    "themes": ["self-mastery", "mind", "inner battle", "discipline"]
+    "topic": "Self-mastery — the self as friend or enemy",
+    "text": "One should raise his self by self; one should not degrade his self; for one's own self is one's friend, and one's own self is one's enemy. To him only who has subjugated his self by his self is self a friend. But to him who has not subjugated his self, his self behaves inimically like an enemy.",
+    "themes": ["self-mastery", "mind", "inner battle", "discipline"],
+    "url": "https://sacred-texts.com/hin/m06/m06030.htm"
   },
   {
     "id": "bhishma-26-02",
@@ -347,8 +305,9 @@
     "adhyaya": "Adhyāya 26",
     "episode": "Bhagavad Gītā — Kṛṣṇa's counsel to Arjuna",
     "topic": "Steadiness of the wise",
-    "text": "Kṛṣṇa said: One who is not disturbed in mind even amidst the threefold miseries, who is not elated when there is happiness, who is free from attachment, fear, and anger — such a person is called a sage of steady mind. This is the leader who can be trusted in crisis.",
-    "themes": ["equanimity", "composure", "wisdom", "crisis leadership"]
+    "text": "When one casts off all the desires of his heart and is pleased within his self with self, then is one said to be of steady mind. He whose mind is not agitated amid calamities, whose craving for pleasure is gone, who is freed from attachment to worldly objects, fear and wrath, is said to be a Muni of steady mind.",
+    "themes": ["equanimity", "composure", "wisdom", "crisis leadership"],
+    "url": "https://sacred-texts.com/hin/m06/m06026.htm"
   },
   {
     "id": "bhishma-27-01",
@@ -356,115 +315,108 @@
     "adhyaya": "Adhyāya 27",
     "episode": "Bhagavad Gītā — Kṛṣṇa's counsel to Arjuna",
     "topic": "Action over inaction",
-    "text": "Kṛṣṇa said: No one can remain without action even for a moment. All are driven to act by the forces of nature. The wise person acts while knowing that the fruits are uncertain — the fool waits for certainty that will never come.",
-    "themes": ["action", "inaction", "decision-making", "uncertainty"]
+    "text": "No one can abide even for a moment without doing work. All works are, in every way, done by the qualities of nature. He, whose mind is deluded by egoism, however, regards himself as the actor.",
+    "themes": ["action", "inaction", "decision-making", "uncertainty"],
+    "url": "https://sacred-texts.com/hin/m06/m06027.htm"
   },
   {
     "id": "bhishma-28-01",
     "parva": "Bhīṣma Parva",
-    "adhyaya": "Adhyāya 28",
+    "adhyaya": "Adhyāya 27",
     "episode": "Bhagavad Gītā — Kṛṣṇa's counsel to Arjuna",
     "topic": "Leading by example — the responsibility of the capable",
-    "text": "Kṛṣṇa said: Whatever a great person does, others follow. Whatever standard he sets, the world pursues it. There is nothing the wise person needs to do for himself — yet he acts, for the sake of those who will follow his example.",
-    "themes": ["leadership by example", "responsibility", "role model", "influence"]
+    "text": "Whatever a great man doth, is also done by vulgar people. Ordinary men follow the ideal set by them, the great.",
+    "themes": ["leadership by example", "responsibility", "role model", "influence"],
+    "url": "https://sacred-texts.com/hin/m06/m06027.htm"
   },
   {
     "id": "bhishma-32-01",
     "parva": "Bhīṣma Parva",
-    "adhyaya": "Adhyāya 32",
+    "adhyaya": "Adhyāya 26",
     "episode": "Bhagavad Gītā — Kṛṣṇa's counsel to Arjuna",
-    "topic": "Transcending fear in high-stakes situations",
-    "text": "Kṛṣṇa said: Do not be afraid, O Arjuna. Fear arises when we forget who we are and become consumed by what may be lost. The one who acts from the centre of his own nature — from duty, from clarity, from truth — is not shaken by the prospect of loss.",
-    "themes": ["fear", "courage", "duty", "high-stakes decisions"]
-  },
-  {
-    "id": "adi-01-01",
-    "parva": "Ādi Parva",
-    "adhyaya": "Adhyāya 1",
-    "episode": "The conflict of values — the Mahābhārata frame",
-    "topic": "Dharma as the foundation of all",
-    "text": "The sūta said: Dharma is the one eternal truth. On dharma everything rests — wealth, pleasure, and liberation. He who upholds dharma is upheld by dharma. He who injures dharma is injured by it. This is the teaching that the Mahābhārata encodes in a thousand stories.",
-    "themes": ["dharma", "ethics", "foundation", "governance"]
+    "topic": "Transcending fear through the teaching of the eternal soul",
+    "text": "Know that the soul to be immortal by which all this universe is pervaded. No one can compass the destruction of that which is imperishable. It is never born, nor doth it ever die. Weapons cleave it not, fire consumeth it not; the waters do not drench it, nor doth the wind waste it. Therefore, knowing it to be such, it behoveth thee not to mourn for it.",
+    "themes": ["fear", "courage", "duty", "high-stakes decisions"],
+    "url": "https://sacred-texts.com/hin/m06/m06026.htm"
   },
   {
     "id": "karnaparva-01-01",
-    "parva": "Karṇa Parva",
-    "adhyaya": "Adhyāya 1",
+    "parva": "Udyoga Parva",
+    "adhyaya": "Adhyāya 141",
     "episode": "Karṇa's dilemma — loyalty vs dharma",
-    "topic": "Conflict between personal loyalty and larger duty",
-    "text": "Karṇa knew that he fought on the wrong side, yet he could not abandon Duryodhana — his friend when all others had rejected him. This is the tragedy of loyalty without wisdom: a good person bound to a wrong cause by the debt of kindness. The question Karṇa forces us to ask is: when does loyalty become complicity?",
-    "themes": ["loyalty", "dharma", "ethical dilemma", "complicity", "friendship"]
+    "topic": "Choosing loyalty to a benefactor over a righteous cause",
+    "text": "Karna said to Krishna: For the sake of death, or the ties of blood, or fear, or temptation, I cannot venture, O Janardana, to behave falsely towards the intelligent son of Dhritarashtra. I cannot venture to destroy those bonds even for the sake of the whole earth or heaps of gold.",
+    "themes": ["loyalty", "dharma", "ethical dilemma", "complicity", "friendship"],
+    "url": "https://sacred-texts.com/hin/m05/m05141.htm"
   },
   {
     "id": "sauptika-01-01",
     "parva": "Sauptika Parva",
-    "adhyaya": "Adhyāya 1",
+    "adhyaya": "Adhyāya 8",
     "episode": "Ashvatthama's act — the ethics of revenge",
-    "topic": "Revenge and its consequences",
-    "text": "Ashvatthama, consumed by grief and rage at the killing of his father Droṇa, committed an act of mass slaughter that even his allies condemned. He had the skill, the opportunity, and the justification in his own mind — yet the act destroyed his honour. Revenge that destroys one's own dharma destroys the self.",
-    "themes": ["revenge", "ethics", "grief", "consequences", "dharma"]
-  },
-  {
-    "id": "shanti-140-01",
-    "parva": "Śānti Parva",
-    "adhyaya": "Adhyāya 140",
-    "episode": "Rājadharma — norms of administration",
-    "topic": "Knowing when to act and when to wait",
-    "text": "Bhīṣma said: Discerning the right time for action is perhaps the rarest wisdom. He who acts before the time is ripe wastes his effort; he who waits past the time loses the opportunity. This discernment — knowing when — cannot be learned from books alone. It comes from experience and a still mind.",
-    "themes": ["timing", "wisdom", "discernment", "action"]
-  },
-  {
-    "id": "shanti-141-01",
-    "parva": "Śānti Parva",
-    "adhyaya": "Adhyāya 141",
-    "episode": "Rājadharma — norms of administration",
-    "topic": "Transparency and trust",
-    "text": "Bhīṣma said: The ruler who maintains the trust of his people possesses a fortress that cannot be breached. Trust is not declared — it is built over time through consistent truthfulness, kept promises, and transparent conduct. Once lost, it is almost impossible to recover.",
-    "themes": ["trust", "transparency", "governance", "integrity"]
-  },
-  {
-    "id": "shanti-167-01",
-    "parva": "Śānti Parva",
-    "adhyaya": "Adhyāya 167",
-    "episode": "Mokshadharma",
-    "topic": "Equanimity toward success and failure",
-    "text": "Bhīṣma said: The person who is neither elated by victory nor crushed by defeat has truly understood the nature of the world. Both victory and defeat are visitors — they come and they go. He who receives both with equanimity remains capable of clear action in either condition.",
-    "themes": ["equanimity", "resilience", "success", "failure", "mental stability"]
+    "topic": "Revenge that violates the codes of war",
+    "text": "Ashvatthama's night attack on the sleeping Pandava camp was condemned even by its victims: he never slaughters one that is asleep, or one that is heedless, or one that has laid aside his weapons — yet this is precisely what was done. Dhrishtadyumna and all the sons of Draupadi were slain while they slept.",
+    "themes": ["revenge", "ethics", "grief", "consequences", "dharma"],
+    "url": "https://sacred-texts.com/hin/m10/m10008.htm"
   },
   {
     "id": "udyoga-04-01",
     "parva": "Udyoga Parva",
-    "adhyaya": "Adhyāya 4",
+    "adhyaya": "Adhyāya 1",
     "episode": "Preparation for war — Pāṇḍava counsel",
-    "topic": "Knowing your strengths and weaknesses before acting",
-    "text": "Before any great undertaking, the wise leader conducts an honest assessment — of his own strength and weakness, of the enemy's strength and weakness, of the terrain, of the time, and of the allies available. He who embarks on a great enterprise without this assessment is gambling, not leading.",
-    "themes": ["self-assessment", "strategic planning", "SWOT", "leadership"]
+    "topic": "Choosing diplomacy before war",
+    "text": "Krishna said: Let a person, virtuous and honest and of respectable birth, and wary — an able ambassador — set out to beseech them mildly for inducing them to give half the kingdom to Yudhishthira.",
+    "themes": ["diplomacy", "strategy", "negotiation", "leadership"],
+    "url": "https://sacred-texts.com/hin/m05/m05001.htm"
   },
   {
     "id": "udyoga-05-01",
     "parva": "Udyoga Parva",
-    "adhyaya": "Adhyāya 5",
+    "adhyaya": "Adhyāya 4",
     "episode": "Preparation for war — Pāṇḍava counsel",
-    "topic": "Team building and coalition",
-    "text": "The strength of the Pāṇḍavas lay not in any single warrior but in the coalition they built — Kṛṣṇa's wisdom, Arjuna's skill, Bhīma's strength, the allies from across the land. The leader who can unite diverse talents around a shared purpose multiplies his own capability many times over.",
-    "themes": ["team building", "coalition", "diversity", "collective strength"]
-  },
-  {
-    "id": "drona-01-01",
-    "parva": "Droṇa Parva",
-    "adhyaya": "Adhyāya 1",
-    "episode": "Chakravyūha — decision under incomplete information",
-    "topic": "Acting under incomplete information",
-    "text": "Abhimanyu knew how to enter the Chakravyūha but did not know how to exit. He acted on incomplete knowledge and paid the ultimate price. The lesson is not that he should have waited for complete information — complete information rarely comes. The lesson is that in entering any dangerous undertaking, one must have a plan for exit, not just for entry.",
-    "themes": ["incomplete information", "planning", "risk management", "Chakravyuha"]
+    "topic": "Building a coalition of allies swiftly",
+    "text": "Drupada said: Let speedy messengers go to Salya, and Dhrishtaketu, and Jayatsena, and the prince of the Kekayas. Rightminded persons respond to the request of those that first beseech them. Therefore, make haste in first preferring your suit to these rulers of men.",
+    "themes": ["team building", "coalition", "diplomacy", "collective strength"],
+    "url": "https://sacred-texts.com/hin/m05/m05004.htm"
   },
   {
     "id": "drona-01-02",
     "parva": "Droṇa Parva",
-    "adhyaya": "Adhyāya 1",
+    "adhyaya": "Adhyāya 41",
     "episode": "Chakravyūha — collective failure",
-    "topic": "Coordination failure and collective responsibility",
-    "text": "The Pāṇḍavas failed to protect Abhimanyu not because any single warrior was absent, but because their coordination broke down. Each assumed someone else would break through to help. This is the danger in any team — the assumption that another person is responsible is the death of collective accountability.",
-    "themes": ["coordination", "collective responsibility", "team failure", "accountability"]
+    "topic": "Blocked by one, the many fail to reach their own",
+    "text": "Sanjaya narrated: the Matsyas, the Panchalas, the Kaikeyas, and the Pandavas, exerting themselves vigorously, succeeded in approaching the presence of Jayadratha — but none of them could bear him. Protected by a boon, he alone checked all of them and sealed the breach, leaving Abhimanyu cut off within the formation.",
+    "themes": ["coordination", "collective responsibility", "team failure", "accountability"],
+    "url": "https://sacred-texts.com/hin/m07/m07040.htm"
+  },
+  {
+    "id": "udyoga-71-01",
+    "parva": "Udyoga Parva",
+    "adhyaya": "Adhyāya 95",
+    "episode": "Kṛṣṇa's Embassy",
+    "topic": "Peace is the choice of the powerful, not weakness",
+    "text": "Krishna said to Dhritarashtra: The establishment of peace, O king, depends on thee and myself, O monarch. In battle, O great king, nothing but wholesale destruction is visible. Reconciliation with the Pandavas, whom thou hast raised as thy own, is wisdom, not weakness.",
+    "themes": ["negotiation", "diplomacy", "strength", "peace"],
+    "url": "https://sacred-texts.com/hin/m05/m05095.htm"
+  },
+  {
+    "id": "udyoga-72-01",
+    "parva": "Udyoga Parva",
+    "adhyaya": "Adhyāya 95",
+    "episode": "Kṛṣṇa's Embassy",
+    "topic": "The strength of unity against a common threat",
+    "text": "Krishna said to Dhritarashtra: If, O slayer of foes, thou hast both the Kurus and the Pandavas at thy back, the sovereignty of the whole world and invincibility before all foes will be thine.",
+    "themes": ["unity", "strategy", "alliance", "negotiation"],
+    "url": "https://sacred-texts.com/hin/m05/m05095.htm"
+  },
+  {
+    "id": "udyoga-73-01",
+    "parva": "Udyoga Parva",
+    "adhyaya": "Adhyāya 95",
+    "episode": "Kṛṣṇa's Embassy",
+    "topic": "War brings only mutual destruction, whatever pride tells you",
+    "text": "Krishna said: In battle, O great king, nothing but wholesale destruction is visible.",
+    "themes": ["pride", "war", "destruction", "foresight"],
+    "url": "https://sacred-texts.com/hin/m05/m05095.htm"
   }
 ]

@@ -50,6 +50,7 @@ export async function POST(req: Request) {
       topic: p.topic,
       text: p.text,
       score: p.score,
+      url: p.url,
     }));
 
     const char = character ? CHARACTERS_MAP[character] : null;

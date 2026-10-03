@@ -7,7 +7,7 @@ import { CHARACTERS, ALL_CHARACTERS } from '@/lib/characters';
 
 interface Source {
   id: string; parva: string; adhyaya: string; episode: string;
-  topic: string; text: string; score: number;
+  topic: string; text: string; score: number; url: string;
 }
 
 interface HistoryEntry {
@@ -20,7 +20,7 @@ interface HistoryEntry {
 
 interface DailyChunk {
   id: string; parva: string; adhyaya: string;
-  episode: string; topic: string; text: string;
+  episode: string; topic: string; text: string; url: string;
 }
 
 const EXAMPLE_QUERIES = [
@@ -54,7 +54,7 @@ function ParsedAnswer({
         if (m) {
           const idx = parseInt(m[1]) - 1;
           const src = sources[idx];
-          const url = src ? getParvaWikiLink(src.parva) : null;
+          const url = src ? (src.url || getParvaWikiLink(src.parva)) : null;
           return url ? (
             <a
               key={i}
@@ -762,7 +762,7 @@ export default function Home() {
                 </p>
                 <div className="flex items-center gap-2 flex-wrap">
                   <a
-                    href={getParvaWikiLink(dailyWisdom.parva)}
+                    href={dailyWisdom.url || getParvaWikiLink(dailyWisdom.parva)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[10px] font-display px-2 py-0.5 rounded hover:underline"
@@ -918,7 +918,7 @@ export default function Home() {
                               {entry.sources.map(s => (
                                 <a
                                   key={s.id}
-                                  href={getParvaWikiLink(s.parva)}
+                                  href={s.url || getParvaWikiLink(s.parva)}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="text-[9px] font-display px-1.5 py-0.5 rounded hover:underline"

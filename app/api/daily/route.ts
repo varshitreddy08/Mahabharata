@@ -13,5 +13,6 @@ export async function GET() {
     episode: chunk.episode,
     topic: chunk.topic,
     text: chunk.text,
+    url: chunk.url,
   });
 }

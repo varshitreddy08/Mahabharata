@@ -2,7 +2,7 @@
 
 interface Source {
   id: string; parva: string; adhyaya: string;
-  episode: string; topic: string; text: string; score: number;
+  episode: string; topic: string; text: string; score: number; url: string;
 }
 
 const PARVA_WIKI: Record<string, string> = {
@@ -31,7 +31,7 @@ export function getParvaWikiLink(parva: string): string {
 
 export function SourceCard({ source, index }: { source: Source; index: number }) {
   const pct = Math.round(source.score * 100);
-  const wikiUrl = getParvaWikiLink(source.parva);
+  const sourceUrl = source.url || getParvaWikiLink(source.parva);
 
   return (
     <div className="card-3d rounded-lg overflow-hidden cursor-default"
@@ -48,7 +48,7 @@ export function SourceCard({ source, index }: { source: Source; index: number })
         <div className="flex items-start justify-between gap-2 mb-2">
           <div>
             <a
-              href={wikiUrl}
+              href={sourceUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="font-display text-xs font-semibold hover:underline"
