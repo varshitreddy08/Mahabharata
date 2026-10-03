@@ -418,5 +418,65 @@
     "text": "Krishna said: In battle, O great king, nothing but wholesale destruction is visible.",
     "themes": ["pride", "war", "destruction", "foresight"],
     "url": "https://sacred-texts.com/hin/m05/m05095.htm"
+  },
+  {
+    "id": "adi-pandava-01",
+    "parva": "Ādi Parva",
+    "adhyaya": "Adhyāya 123",
+    "episode": "Sambhava — birth of the princes",
+    "topic": "Birth of Yudhishthira, son of the god Dharma",
+    "text": "Then the handsome Kunti was united (in intercourse) with the god of justice in his spiritual form and obtained from him a son devoted to the good of all creatures. This first child of Pandu shall be known by the name of Yudhishthira.",
+    "themes": ["genealogy", "family", "Pandavas", "divine birth"],
+    "url": "https://sacred-texts.com/hin/m01/m01124.htm"
+  },
+  {
+    "id": "adi-pandava-02",
+    "parva": "Ādi Parva",
+    "adhyaya": "Adhyāya 123",
+    "episode": "Sambhava — birth of the princes",
+    "topic": "Birth of Bhima, son of the god Vayu",
+    "text": "The god of wind thereupon begat upon her the child afterwards known as Bhima of mighty arms and fierce prowess.",
+    "themes": ["genealogy", "family", "Pandavas", "divine birth"],
+    "url": "https://sacred-texts.com/hin/m01/m01124.htm"
+  },
+  {
+    "id": "adi-pandava-03",
+    "parva": "Ādi Parva",
+    "adhyaya": "Adhyāya 123",
+    "episode": "Sambhava — birth of the princes",
+    "topic": "Birth of Arjuna, son of Indra",
+    "text": "The celebrated Kunti, thus addressed by her lord, invoked Sakra (the king of the gods) who thereupon came unto her and begat him that was afterwards called Arjuna.",
+    "themes": ["genealogy", "family", "Pandavas", "divine birth"],
+    "url": "https://sacred-texts.com/hin/m01/m01124.htm"
+  },
+  {
+    "id": "adi-pandava-04",
+    "parva": "Ādi Parva",
+    "adhyaya": "Adhyāya 124",
+    "episode": "Sambhava — birth of the princes",
+    "topic": "Birth of Nakula and Sahadeva, sons of Madri via the Ashvins",
+    "text": "Madri thought of the twin Aswins, who coming unto her with speed begat upon her two sons. In energy and beauty these twins shall transcend even the twin Aswins themselves.",
+    "themes": ["genealogy", "family", "Pandavas", "divine birth"],
+    "url": "https://sacred-texts.com/hin/m01/m01125.htm"
+  },
+  {
+    "id": "adi-karna-01",
+    "parva": "Ādi Parva",
+    "adhyaya": "Adhyāya 111",
+    "episode": "Sambhava — birth of Karna",
+    "topic": "Birth of Karna, son of Kunti and the sun god Surya, before her marriage to Pandu",
+    "text": "Thus speaking unto the daughter of Kuntibhoja, the illustrious Tapana — the illuminator of the universe — gratified his wish. And of this connection there was immediately born a son known all over the world as Karna accoutred with natural armour and with face brightened by ear-rings.",
+    "themes": ["genealogy", "family", "Karna", "divine birth"],
+    "url": "https://sacred-texts.com/hin/m01/m01112.htm"
+  },
+  {
+    "id": "adi-kaurava-01",
+    "parva": "Ādi Parva",
+    "adhyaya": "Adhyāya 115",
+    "episode": "Sambhava — birth of the Kauravas",
+    "topic": "Birth of Duryodhana and the hundred Kaurava sons to Gandhari",
+    "text": "That ball of flesh then, sprinkled over with water, became, in time, divided into a hundred and one parts, each about the size of the thumb. Then in time, king Duryodhana was born from among those pieces of the ball of flesh that had been deposited in those pots. According to the order of birth, king Yudhishthira was the oldest.",
+    "themes": ["genealogy", "family", "Kauravas", "Duryodhana"],
+    "url": "https://sacred-texts.com/hin/m01/m01116.htm"
   }
 ]

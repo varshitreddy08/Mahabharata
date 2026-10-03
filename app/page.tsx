@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { SourceCard, getParvaWikiLink } from '@/components/SourceCard';
+import { getParvaWikiLink } from '@/components/SourceCard';
 import { CHARACTERS, ALL_CHARACTERS } from '@/lib/characters';
 
 interface Source {
@@ -33,6 +33,15 @@ const EXAMPLE_QUERIES = [
 
 /* ── Parva → Wikipedia link ───────────────────────── */
 // re-exported from SourceCard; imported here for inline citations
+
+/* ── Only keep sources actually cited as [Source N] in the answer ── */
+function citedOnly(text: string, sources: Source[]): Source[] {
+  const cited = new Set<number>();
+  for (const m of text.matchAll(/\[Source (\d+)\]/g)) {
+    cited.add(parseInt(m[1], 10) - 1);
+  }
+  return sources.filter((_, i) => cited.has(i));
+}
 
 /* ── Inline citation parser ──────────────────────── */
 function ParsedAnswer({
@@ -724,18 +733,6 @@ export default function Home() {
           </section>
         )}
 
-        {/* ── Source cards (single mode only) ─────── */}
-        {!councilActive && sources.length > 0 && (
-          <section className="animate-fade-up">
-            <LotusDivider label={`${sources.length} Source Passages`} />
-            <div className="mt-4 sm:mt-5 grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-2">
-              {sources.map((s, i) => (
-                <SourceCard key={s.id} source={s} index={i} />
-              ))}
-            </div>
-          </section>
-        )}
-
         {/* ── Empty state ─────────────────────────── */}
         {!hasResult && !councilActive && !error && (
           <section className="animate-fade-up space-y-4">
@@ -913,9 +910,9 @@ export default function Home() {
                               accent={char?.accent}
                             />
                           </p>
-                          {entry.sources.length > 0 && (
+                          {citedOnly(entry.answer, entry.sources).length > 0 && (
                             <div className="flex flex-wrap gap-1.5">
-                              {entry.sources.map(s => (
+                              {citedOnly(entry.answer, entry.sources).map(s => (
                                 <a
                                   key={s.id}
                                   href={s.url || getParvaWikiLink(s.parva)}

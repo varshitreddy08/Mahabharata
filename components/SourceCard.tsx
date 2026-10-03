@@ -53,11 +53,8 @@ export function SourceCard({ source, index }: { source: Source; index: number })
               rel="noopener noreferrer"
               className="font-display text-xs font-semibold hover:underline"
               style={{ color: 'var(--gold-light)', letterSpacing: '0.08em' }}>
-              [{index + 1}] {source.parva} ↗
+              [{index + 1}] {source.adhyaya} ↗
             </a>
-            <p className="text-xs mt-0.5" style={{ color: 'var(--gold-dim)' }}>
-              {source.adhyaya}
-            </p>
           </div>
 
           {/* Score badge */}

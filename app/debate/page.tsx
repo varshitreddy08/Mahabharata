@@ -6,7 +6,32 @@ import { CHARACTERS, type Character } from '@/lib/characters';
 
 interface Source {
   id: string; parva: string; adhyaya: string; episode: string;
-  topic: string; text: string; score: number;
+  topic: string; text: string; score: number; url: string;
+}
+
+/* ── Inline citation parser (same rule as the Oracle page: only
+   render a link for [Source N] tags the answer actually used) ── */
+function ParsedAnswer({ text, sources, accent }: { text: string; sources: Source[]; accent: string }) {
+  const parts = text.split(/(\[Source \d+\])/g);
+  return (
+    <>
+      {parts.map((part, i) => {
+        const m = part.match(/\[Source (\d+)\]/);
+        if (m) {
+          const src = sources[parseInt(m[1], 10) - 1];
+          return src?.url ? (
+            <a key={i} href={src.url} target="_blank" rel="noopener noreferrer"
+              className="font-display text-[11px] px-1 py-0.5 rounded"
+              style={{ color: accent, background: `${accent}15`, border: `1px solid ${accent}50`, textDecoration: 'none', whiteSpace: 'nowrap' }}
+              title={`${src.parva} — ${src.adhyaya}`}>
+              {part} ↗
+            </a>
+          ) : <span key={i}>{part}</span>;
+        }
+        return <span key={i}>{part}</span>;
+      })}
+    </>
+  );
 }
 
 /* ── Streaming helper ─────────────────────────────── */
@@ -194,27 +219,13 @@ function DebatePanel({
           </div>
         )}
         {answer && (
-          <p className="answer-prose whitespace-pre-wrap text-[0.88rem]">{answer}
+          <p className="answer-prose whitespace-pre-wrap text-[0.88rem]">
+            <ParsedAnswer text={answer} sources={sources} accent={char.accent} />
             {loading && <span className="inline-block w-0.5 h-4 ml-0.5 animate-pulse"
               style={{ background: char.accent, verticalAlign: 'middle' }} />}
           </p>
         )}
       </div>
-
-      {/* Source chips */}
-      {sources.length > 0 && (
-        <div className="px-4 pb-3 flex flex-wrap gap-1.5" style={{ borderTop: `1px solid ${char.accent}20` }}>
-          <p className="w-full text-[10px] font-display tracking-widest uppercase pt-2 pb-1"
-            style={{ color: `${char.accent}80` }}>Sources</p>
-          {sources.map((s, i) => (
-            <span key={s.id}
-              className="text-[10px] px-2 py-0.5 rounded-full font-body"
-              style={{ background: `${char.accent}15`, border: `1px solid ${char.accent}40`, color: 'var(--parchment-dim)' }}>
-              [{i + 1}] {s.parva} · {Math.round(s.score * 100)}%
-            </span>
-          ))}
-        </div>
-      )}
     </div>
   );
 }

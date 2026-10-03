@@ -5,10 +5,13 @@ import { CHARACTERS_MAP } from '@/lib/characters';
 
 const DEFAULT_SYSTEM = `You are a leadership and strategy advisor grounded in the Mahābhārata.
 Answer the user's question using ONLY the provided source passages.
-IMPORTANT: If the question is about a person, place, or topic not present in the provided passages — including anyone not from the Mahābhārata — do NOT generate an answer. Instead respond: "This question cannot be answered from the available Mahābhārata sources. Please ask about leadership, strategy, ethics, or dharma as taught in the epic."
+IMPORTANT: If the question is about a person, place, or topic not present in the provided passages — including anyone not from the Mahābhārata — do NOT generate an answer. Instead respond: "This question cannot be answered from the available Mahābhārata sources. Please ask about leadership, strategy, ethics, dharma, or the characters and family relationships of the epic."
 Always cite your sources using [Source N] notation.
-After your main answer, add a short section titled "⚡ Modern Application:" that connects this ancient wisdom to a specific contemporary leadership or workplace scenario.
+If the question is a basic factual/genealogy question (e.g. "who is X" or "who are X's brothers") and the passages answer it, give a direct factual answer grounded in the passages — the "⚡ Modern Application:" section is only required when the passages contain a leadership/strategy/ethics lesson to connect; omit it for pure genealogy/identity questions.
 Do not invent facts, names, or events beyond what the passages explicitly state.`;
+
+const OUT_OF_SCOPE_MSG =
+  'This system answers questions about leadership, strategy, ethics, and governance as taught in the Mahābhārata, as well as basic questions about its characters and their family relationships. Please ask a relevant question — for example: "How should a leader handle anger?" or "Who are Arjuna\'s brothers?"';
 
 export async function POST(req: Request) {
   try {
@@ -23,12 +26,10 @@ export async function POST(req: Request) {
     const MIN_SCORE = 0.32;
     if (passages[0].score < MIN_SCORE) {
       const encoder = new TextEncoder();
-      const msg =
-        'This system only answers questions about leadership, strategy, ethics, and governance as taught in the Mahābhārata. Please ask a relevant question — for example: "How should a leader handle anger?" or "What are the four instruments of statecraft?"';
       const stream = new ReadableStream({
         start(controller) {
           controller.enqueue(encoder.encode(`__SOURCES__[]\n`));
-          controller.enqueue(encoder.encode(msg));
+          controller.enqueue(encoder.encode(OUT_OF_SCOPE_MSG));
           controller.close();
         },
       });
@@ -70,9 +71,29 @@ export async function POST(req: Request) {
     const encoder = new TextEncoder();
     const stream = new ReadableStream({
       async start(controller) {
-        controller.enqueue(encoder.encode(`__SOURCES__${JSON.stringify(sources)}\n`));
+        // Buffer output until a real [Source N] citation appears. The model is
+        // instructed to answer only from the passages and cite as it goes — if it
+        // never cites, it has drifted into unsourced general knowledge rather than
+        // refusing, so we discard that text and send the refusal instead.
+        let buffer = '';
+        let grounded = false;
+
         for await (const chunk of textStream) {
-          controller.enqueue(encoder.encode(chunk));
+          if (grounded) {
+            controller.enqueue(encoder.encode(chunk));
+            continue;
+          }
+          buffer += chunk;
+          if (/\[Source \d+\]/.test(buffer)) {
+            grounded = true;
+            controller.enqueue(encoder.encode(`__SOURCES__${JSON.stringify(sources)}\n`));
+            controller.enqueue(encoder.encode(buffer));
+          }
+        }
+
+        if (!grounded) {
+          controller.enqueue(encoder.encode(`__SOURCES__[]\n`));
+          controller.enqueue(encoder.encode(OUT_OF_SCOPE_MSG));
         }
         controller.close();
       },
