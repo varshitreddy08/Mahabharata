@@ -27,7 +27,14 @@
       "Bash(curl -s -X POST http://localhost:3000/api/query -H \"Content-Type: application/json\" -d '{\"query\":\"What is the capital of France?\"}')",
       "Bash(git config *)",
       "Bash(gh auth *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(npm view *)",
+      "Bash(node -e ' *)",
+      "Bash(npm install *)",
+      "Bash(npm audit *)",
+      "Bash(git commit *)"
     ]
   }
 }
