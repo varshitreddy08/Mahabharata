@@ -55,7 +55,8 @@ function ParsedAnswer({
   accent?: string;
   loading?: boolean;
 }) {
-  const parts = text.split(/(\[Source \d+\])/g);
+  // Split on citation tags AND **bold** markdown so neither ever leaks as raw text.
+  const parts = text.split(/(\[Source \d+\]|\*\*[^*]+\*\*)/g);
   return (
     <>
       {parts.map((part, i) => {
@@ -83,6 +84,14 @@ function ParsedAnswer({
             </a>
           ) : (
             <span key={i} style={{ color: accent || 'var(--gold)' }}>{part}</span>
+          );
+        }
+        const bold = part.match(/^\*\*([^*]+)\*\*$/);
+        if (bold) {
+          return (
+            <strong key={i} style={{ color: accent || 'var(--gold-light)', fontWeight: 600 }}>
+              {bold[1]}
+            </strong>
           );
         }
         return <span key={i}>{part}</span>;
@@ -187,6 +196,7 @@ export default function Home() {
   // Council of Five
   const [councilMode, setCouncilMode] = useState(false);
   const [councilAnswers, setCouncilAnswers] = useState<Record<string, string>>({});
+  const [councilSources, setCouncilSources] = useState<Record<string, Source[]>>({});
   const [councilActive, setCouncilActive] = useState(false);
 
   // Session history (Sacred Scrolls)
@@ -202,6 +212,27 @@ export default function Home() {
   useEffect(() => {
     fetch('/api/daily').then(r => r.json()).then(setDailyWisdom).catch(() => {});
   }, []);
+
+  // Restore Sacred Scrolls (session history) from the previous visit.
+  const historyLoaded = useRef(false);
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('mahabharata-history');
+      // Restoring persisted state on mount legitimately needs setState here;
+      // a lazy initializer would read localStorage during SSR/hydration and mismatch.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      if (saved) setHistory(JSON.parse(saved) as HistoryEntry[]);
+    } catch { /* ignore corrupt / unavailable storage */ }
+    historyLoaded.current = true;
+  }, []);
+
+  // Persist Sacred Scrolls whenever they change (after the initial restore).
+  useEffect(() => {
+    if (!historyLoaded.current) return;
+    try {
+      localStorage.setItem('mahabharata-history', JSON.stringify(history));
+    } catch { /* ignore quota / unavailable storage */ }
+  }, [history]);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -220,7 +251,10 @@ export default function Home() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query: q, character: charId }),
     });
-    if (!res.ok) return;
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}));
+      throw new Error((data as { error?: string }).error ?? `Server error ${res.status}`);
+    }
 
     const reader = res.body!.getReader();
     const decoder = new TextDecoder();
@@ -232,7 +266,15 @@ export default function Home() {
       buf += decoder.decode(value, { stream: true });
       if (!handled) {
         const nl = buf.indexOf('\n');
-        if (nl !== -1) { handled = true; buf = buf.slice(nl + 1); }
+        if (nl !== -1) {
+          const firstLine = buf.slice(0, nl);
+          if (firstLine.startsWith('__SOURCES__')) {
+            const parsed = JSON.parse(firstLine.slice(11)) as Source[];
+            setCouncilSources(prev => ({ ...prev, [charId]: parsed }));
+          }
+          handled = true;
+          buf = buf.slice(nl + 1);
+        }
       }
       if (handled) {
         acc += buf; buf = '';
@@ -244,12 +286,13 @@ export default function Home() {
   async function handleCouncilSubmit(q: string) {
     setLoading(true);
     setCouncilAnswers({});
+    setCouncilSources({});
     setCouncilActive(true);
     setAnswer(''); setSources([]); setError('');
     try {
       await Promise.all(CHARACTERS.map(c => streamCharacter(c.id, q)));
     } catch (e: unknown) {
-      if (e instanceof Error) setError(e.message);
+      setError(e instanceof Error ? e.message : 'The council could not be convened. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -664,11 +707,12 @@ export default function Home() {
                     {charAnswer ? (
                       <p className="text-[11px] sm:text-xs font-body leading-relaxed whitespace-pre-wrap"
                         style={{ color: 'var(--parchment)', maxHeight: '18rem', overflowY: 'auto' }}>
-                        {charAnswer}
-                        {loading && (
-                          <span className="inline-block w-0.5 h-3 ml-0.5 animate-pulse align-middle"
-                            style={{ background: c.accent }} />
-                        )}
+                        <ParsedAnswer
+                          text={charAnswer}
+                          sources={councilSources[c.id] ?? []}
+                          accent={c.accent}
+                          loading={loading}
+                        />
                       </p>
                     ) : (
                       <div className="flex items-center gap-2 py-3" style={{ color: c.accent }}>
@@ -847,22 +891,34 @@ export default function Home() {
         {/* ── Sacred Scrolls · Session History ─────── */}
         {history.length > 0 && (
           <section className="animate-fade-up">
-            <button
-              onClick={() => setHistoryOpen(p => !p)}
-              suppressHydrationWarning
-              className="w-full flex items-center justify-between px-4 py-2.5 rounded-lg font-display text-[10px] tracking-[0.2em] uppercase transition-all"
-              style={{
-                background: 'var(--stone-dark)',
-                border: '1px solid #2A1F55',
-                color: 'var(--gold-dim)',
-              }}>
-              <span>✦ Sacred Scrolls · {history.length} Session {history.length === 1 ? 'Query' : 'Queries'}</span>
-              <span style={{
-                display: 'inline-block',
-                transform: historyOpen ? 'rotate(180deg)' : 'none',
-                transition: 'transform 0.2s',
-              }}>▾</span>
-            </button>
+            <div className="flex items-stretch gap-2">
+              <button
+                onClick={() => setHistoryOpen(p => !p)}
+                suppressHydrationWarning
+                className="flex-1 flex items-center justify-between px-4 py-2.5 rounded-lg font-display text-[10px] tracking-[0.2em] uppercase transition-all"
+                style={{
+                  background: 'var(--stone-dark)',
+                  border: '1px solid #2A1F55',
+                  color: 'var(--gold-dim)',
+                }}>
+                <span>✦ Sacred Scrolls · {history.length} Saved {history.length === 1 ? 'Query' : 'Queries'}</span>
+                <span style={{
+                  display: 'inline-block',
+                  transform: historyOpen ? 'rotate(180deg)' : 'none',
+                  transition: 'transform 0.2s',
+                }}>▾</span>
+              </button>
+              <button
+                onClick={() => { setHistory([]); setExpandedHistory(null); setHistoryOpen(false); }}
+                suppressHydrationWarning
+                title="Clear all saved scrolls"
+                className="px-3 rounded-lg font-display text-[10px] tracking-[0.15em] uppercase transition-colors"
+                style={{ background: 'var(--stone-dark)', border: '1px solid #2A1F55', color: 'var(--parchment-dim)' }}
+                onMouseEnter={e => (e.currentTarget.style.borderColor = 'var(--crimson)')}
+                onMouseLeave={e => (e.currentTarget.style.borderColor = '#2A1F55')}>
+                ✕ Clear
+              </button>
+            </div>
 
             {historyOpen && (
               <div className="mt-2 space-y-2">

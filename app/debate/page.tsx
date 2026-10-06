@@ -12,7 +12,7 @@ interface Source {
 /* ── Inline citation parser (same rule as the Oracle page: only
    render a link for [Source N] tags the answer actually used) ── */
 function ParsedAnswer({ text, sources, accent }: { text: string; sources: Source[]; accent: string }) {
-  const parts = text.split(/(\[Source \d+\])/g);
+  const parts = text.split(/(\[Source \d+\]|\*\*[^*]+\*\*)/g);
   return (
     <>
       {parts.map((part, i) => {
@@ -27,6 +27,10 @@ function ParsedAnswer({ text, sources, accent }: { text: string; sources: Source
               {part} ↗
             </a>
           ) : <span key={i}>{part}</span>;
+        }
+        const bold = part.match(/^\*\*([^*]+)\*\*$/);
+        if (bold) {
+          return <strong key={i} style={{ color: accent, fontWeight: 600 }}>{bold[1]}</strong>;
         }
         return <span key={i}>{part}</span>;
       })}
@@ -301,6 +305,11 @@ export default function DebatePage() {
         body: JSON.stringify({ topic, char1, answer1: fullAnswer1, char2, answer2: fullAnswer2 }),
       });
 
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error((data as { error?: string }).error ?? `Server error ${res.status}`);
+      }
+
       const reader = res.body!.getReader();
       const decoder = new TextDecoder();
       let acc = '';
@@ -312,7 +321,7 @@ export default function DebatePage() {
         setSynthesis(acc);
       }
     } catch (e: unknown) {
-      console.error(e);
+      setError(e instanceof Error ? e.message : 'The synthesis could not be drawn.');
     } finally {
       setSynthesizing(false);
     }

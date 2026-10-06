@@ -2,10 +2,28 @@ import { streamText } from 'ai';
 import { chatModel } from '@/lib/openrouter';
 import { CHARACTERS_MAP } from '@/lib/characters';
 
-export async function POST(req: Request) {
-  try {
-    const { topic, char1, answer1, char2, answer2 } = await req.json();
+interface SynthesizeBody {
+  topic: string;
+  char1: string;
+  answer1: string;
+  char2: string;
+  answer2: string;
+}
 
+export async function POST(req: Request) {
+  let body: Partial<SynthesizeBody>;
+  try {
+    body = await req.json();
+  } catch {
+    return Response.json({ error: 'Invalid request. Please try again.' }, { status: 400 });
+  }
+
+  const { topic, char1, answer1, char2, answer2 } = body;
+  if (!topic?.trim() || !char1 || !char2 || !answer1?.trim() || !answer2?.trim()) {
+    return Response.json({ error: 'Both debaters must answer before a synthesis can be drawn.' }, { status: 400 });
+  }
+
+  try {
     const c1 = CHARACTERS_MAP[char1];
     const c2 = CHARACTERS_MAP[char2];
 
@@ -53,6 +71,9 @@ Provide the Dharmic Synthesis.`,
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : String(err);
     console.error('[/api/synthesize]', message);
-    return Response.json({ error: message }, { status: 500 });
+    return Response.json(
+      { error: 'The synthesis could not be drawn. Please try again in a moment.' },
+      { status: 500 }
+    );
   }
 }

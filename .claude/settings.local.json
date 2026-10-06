@@ -5,7 +5,29 @@
       "Bash(npx next *)",
       "Bash(Get-ChildItem -Path \"C:\\\\Varshit's Workspace\\\\mahabharata-rag-app\" -Recurse -Filter \"*.tsx\" -o File)",
       "Bash(Select-Object FullName)",
-      "Bash(Get-ChildItem -Recurse -Depth 2)"
+      "Bash(Get-ChildItem -Recurse -Depth 2)",
+      "Bash(ls app/api/query)",
+      "Bash(ls app/api/daily)",
+      "Bash(curl -s -X POST http://localhost:3000/api/query -H \"Content-Type: application/json\" -d '{\"query\":\"How should a leader handle anger?\"}')",
+      "Bash(curl -s -X POST http://localhost:3000/api/query -H \"Content-Type: application/json\" -d '{\"query\":\"al lot if changes need to get fdoenn imporeve the secach what evr er secrj it is comign an error\"}')",
+      "Bash(curl -s -X POST http://localhost:3000/api/query -H \"Content-Type: application/json\" -d '{\"query\":\"who is arjuns brother\"}')",
+      "Bash(curl -s -X POST http://localhost:3000/api/query -H \"Content-Type: application/json\" -d '{\"query\":\"\"}')",
+      "Bash(curl -s -X POST http://localhost:3000/api/query -H \"Content-Type: application/json\" -d '{\"query\":\"   \"}')",
+      "Bash(curl -s -X POST http://localhost:3000/api/query -H \"Content-Type: application/json\" -d '{}')",
+      "Bash(curl -s -X POST http://localhost:3000/api/query -H \"Content-Type: application/json\" -d 'not json')",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" -X POST http://localhost:3000/api/query -H \"Content-Type: application/json\" -d 'not json')",
+      "Bash(curl -s -X POST http://localhost:3000/api/query -H \"Content-Type: application/json\" -d '{\"query\":\"How to lead by example?\",\"character\":\"krishna\"}')",
+      "Bash(curl -s -X POST http://localhost:3000/api/synthesize -H \"Content-Type: application/json\" -d 'garbage')",
+      "Bash(curl -s -X POST http://localhost:3000/api/synthesize -H \"Content-Type: application/json\" -d '{}')",
+      "Bash(curl -s http://localhost:3000/api/daily)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" -X POST http://localhost:3000/api/synthesize -H \"Content-Type: application/json\" -d '{}')",
+      "Bash(npx eslint *)",
+      "Bash(curl -s -X POST http://localhost:3000/api/query -H \"Content-Type: application/json\" -d '{\"query\":\"What are the four instruments of statecraft?\"}')",
+      "Bash(echo \"===exit $?===\")",
+      "Bash(curl -s -X POST http://localhost:3000/api/query -H \"Content-Type: application/json\" -d '{\"query\":\"What is the capital of France?\"}')",
+      "Bash(git config *)",
+      "Bash(gh auth *)",
+      "Bash(git add *)"
     ]
   }
 }
